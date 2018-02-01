@@ -1,6 +1,6 @@
 Consider a system of $N$ linearly interacting degrees of freedom. We collect them into a vector $\mathbf{\bar x}(t) = \left(\,x_1(t),\cdots, x_N(t)\,\right)$ and represent their interactions with random coupling matrix $\mathbf{J}(t)$. We subject them to a global constraint: lying on an $N$-dimensional sphere of radius $N$. These degrees of freedom may also experience constant bias $\mathbf{h}(t)$ external noise $\boldsymbol\xi(t)$. We write down the Langevin Equation of motion, dropping the explicit time dependence for brevity.
 
-\begin{gather}
+\begin{align}
 \partial_t\mathbf{\bar x} = (\mathbf{J}-\mu)\mathbf{\bar x}+\mathbf{h}+\boldsymbol\xi \\
 \text{where}\quad\mu = \frac{1}{N}\mathbf{\bar x}^{\top}\left(\mathbf{J}\mathbf{\bar x}+\mathbf{h}+\xi\right)\quad\text{enforces constraint}\quad|\mathbf{\bar x}(t)|^2=N
 \end{gather}
