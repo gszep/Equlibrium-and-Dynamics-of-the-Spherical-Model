@@ -1,51 +1,55 @@
-\documentclass{article}
+\documentclass{article}[12pt]
+\renewcommand{\baselinestretch}{1.5}
+
 \usepackage[affil-it]{authblk}
 \usepackage{graphicx}
 \usepackage[space]{grffile}
-\usepackage{latexsym}
-\usepackage{textcomp}
-\usepackage{longtable}
-\usepackage{tabulary}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage{latexsym,textcomp,longtable,tabulary}
 \usepackage{booktabs,array,multirow}
 \usepackage{amsfonts,amsmath,amssymb}
+
+\usepackage{url,hyperref,etoolbox}
+\hypersetup{colorlinks=false,pdfborder={0 0 0}}
+
 \providecommand\citet{\cite}
 \providecommand\citep{\cite}
 \providecommand\citealt{\cite}
-\usepackage{url}
-\usepackage{hyperref}
-\hypersetup{colorlinks=false,pdfborder={0 0 0}}
-\usepackage{etoolbox}
+
+
 \makeatletter
 \patchcmd\@combinedblfloats{\box\@outputbox}{\unvbox\@outputbox}{}{%
   \errmessage{\noexpand\@combinedblfloats could not be patched}%
 }%
 \makeatother
-% You can conditionalize code for latexml or normal latex using this.
+
+
 \newif\iflatexml\latexmlfalse
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}%
-
 \AtBeginDocument{\DeclareGraphicsExtensions{.pdf,.PDF,.eps,.EPS,.png,.PNG,.tif,.TIF,.jpg,.JPG,.jpeg,.JPEG}}
-
-\usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
-
-
-
-
 \begin{document}
 
-\title{Equlibrium and Dynamics of the Spherical Model}
+\title{
+On the affect of the Laplacian in equlibration
+dynamics of the Spherical Model
+}
 
-
-\author{Gregg Szep}
-\affil{Affiliation not available}
-
-
-
+\author{Gregory Szep}
+\affil{King's College London}
 \date{\today}
 
 \maketitle
-Consider a system of $N$ linearly interacting degrees of freedom. We collect them into a vector $\mathbf{\bar x}(t) = \left(\,x_1(t),\cdots, x_N(t)\,\right)$ and represent their interactions with random coupling matrix $\mathbf{J}(t)$. We subject them to a global constraint: lying on an $N$-dimensional sphere of radius $N$. These degrees of freedom may also experience constant bias $\mathbf{h}(t)$ external noise $\boldsymbol\xi(t)$. We write down the Langevin Equation of motion, dropping the explicit time dependence for brevity.
+Consider a system of $N$ linearly interacting degrees of freedom. We collect
+them into a vector $\mathbf{\bar x}(t) = \left(\,x_1(t),\cdots, x_N(t)\,\right)$
+and represent their interactions with random coupling matrix $\mathbf{J}(t)$.
+We subject them to a global constraint: lying on an $N$-dimensional sphere of
+radius $N$. These degrees of freedom may also experience constant bias
+$\mathbf{h}(t)$ external noise $\boldsymbol\xi(t)$. We write down the
+Langevin Equation of motion, dropping the explicit time dependence for
+brevity.
 \begin{gather}
 \partial_t\mathbf{\bar x} = (\mathbf{J}-\mu)\mathbf{\bar x}+\mathbf{h}+\boldsymbol\xi\quad\\
 \text{where}\quad\mu = \frac{1}{N}\mathbf{\bar x}^{\top}\left(\mathbf{J}\mathbf{\bar x}+\mathbf{h}+\boldsymbol\xi\right)\quad\text{enforces constraint}\quad|\mathbf{\bar x}(t)|^2=N
