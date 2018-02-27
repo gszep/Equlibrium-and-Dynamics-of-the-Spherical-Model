@@ -10,9 +10,10 @@
 
 \usepackage{latexsym,textcomp,longtable,tabulary}
 \usepackage{booktabs,array,multirow}
-\usepackage{amsfonts,amsmath,amssymb}
+\usepackage{amsfonts,amsmath,amssymb,mathbbol}
 
 \usepackage{url,hyperref,etoolbox}
+\numberwithin{equation}{section}
 \hypersetup{colorlinks=false,pdfborder={0 0 0}}
 
 \providecommand\citet{\cite}
@@ -43,15 +44,54 @@ dynamics of the Spherical Model
 
 \maketitle
 Consider a system of $N$ linearly interacting degrees of freedom. We collect
-them into a vector $\mathbf{\bar x}(t) = \left(\,x_1(t),\cdots, x_N(t)\,\right)$
+them into a vector $\mathbf{\bar s}(t) = \left(\,s_1(t),\cdots, s_N(t)\,\right)$
 and represent their interactions with random coupling matrix $\mathbf{J}(t)$.
 We subject them to a global constraint: lying on an $N$-dimensional sphere of
-radius $N$. These degrees of freedom may also experience constant bias
-$\mathbf{h}(t)$ external noise $\boldsymbol\xi(t)$. We write down the
-Langevin Equation of motion, dropping the explicit time dependence for
-brevity.
+radius $N$, enforced by lagrange multiplier $\mu$. We write down the
+Langevin Equation of motion with external noise $\boldsymbol\xi(t)$, dropping
+the explicit time dependence for brevity.
 \begin{gather}
-\partial_t\mathbf{\bar x} = (\mathbf{J}-\mu)\mathbf{\bar x}+\mathbf{h}+\boldsymbol\xi\quad\\
-\text{where}\quad\mu = \frac{1}{N}\mathbf{\bar x}^{\top}\left(\mathbf{J}\mathbf{\bar x}+\mathbf{h}+\boldsymbol\xi\right)\quad\text{enforces constraint}\quad|\mathbf{\bar x}(t)|^2=N
+\partial_t\mathbf{\bar s} = (\mathbf{J}-\mu)\mathbf{\bar s}+\boldsymbol\xi\quad\\
+\text{where}\quad\mu = \frac{1}{N}\mathbf{\bar s}^{\top}\left(\mathbf{J}\mathbf{\bar s}+\boldsymbol\xi\right)\quad\text{enforces constraint}\quad|\mathbf{\bar s}(t)|^2=N
 \end{gather}
+The following is an attempt to characterise the statistical differences between
+spatial and non-spatial interactions, and their effect on the equilibration
+dynamics by introducting the discretised Laplacian $\Delta$ as a diffusive term.
+
+\section{Analytical Solutions}
+Here we follow the methods used to obtain exact solutions\cite{} in the
+field theoretic setting of the model.
+\begin{align*}
+  \mathbf{\bar u}(t)=\mathbb{e}^{\mathbf{\Lambda}t}\mathbf\Gamma^{1/2}\mathbf{\bar u}(0)
+  +
+\end{align*}
+\subsection{Spectra of Discrete Laplacians}
+Using the Circular Diagonalization Theorem~\cite{} one can derive the
+eigenvalues $\lambda_N(k)$ of an $N\times N$ matrix $\mathbf X_N$ which
+represents the second-order central difference approximation to the
+second derivative along $N$ sites of a one dimensional ring of unit
+circumference.
+\begin{align}
+  \mathbf X_N :=
+  \begin{pmatrix}
+    -2 & 1 &  &  &  & 1 \\
+    1 & -2 & 1 &  &  &  \\
+    & 1 & \ddots & \ddots &  & \\
+    & & \ddots & \ddots & 1 & \\
+    & & & 1 & -2 & 1 \\
+    1 & & & & 1 & -2 \\
+  \end{pmatrix}\quad\\
+  \begin{matrix}
+  \lambda_N(k)=2\left(\cos\left(\frac{2\pi k}{N}\right)-1\right) \\
+  k\in\{0,1,\cdots,N-1\}
+  \end{matrix}\qquad\qquad
+\end{align}
+As the number of sites $N\rightarrow\infty$ the argument $k/N\in[0,1]$
+and the eigenvalues remain bounded. The probability density $\rho(\lambda)$
+can be expressed as a continuous integral:
+\begin{align*}
+  \rho(\lambda')&=\int\!\delta(\lambda'-\lambda(x))p(x)\,\mathrm{d}x \\
+  &=\sum_{x,\lambda'=\lambda(x)}\frac{p(x)}{|\partial_x\lambda(x)|} \\
+  &=\sum_{\alpha=0,1}\frac{\int_0^1\!\delta\left(x-\alpha\right)\,\mathrm{d}x}{Z|\partial_x\lambda|_{x=\alpha}}
+\end{align*}
 \end{document}
