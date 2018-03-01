@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1519664019 "smllnas5728.tex" "/home/gszep/projects/spherical-model/smllnas5728.pdf" "smllnas5728" 1519664020
+["pdflatex"] 1519924514 "smllnas5728.tex" "/home/gszep/Documents/articles/spherical-model/smllnas5728.pdf" "smllnas5728" 1519924515
   "/etc/texmf/web2c/texmf.cnf" 1519309125 1101 af7716885e081ab43982cab7b4672c1a ""
-  "/home/gszep/projects/spherical-model/smllnas5728.aux" 1519664020 1026 4f4c8c27e3955753c7936bb4c295bf94 ""
+  "/home/gszep/Documents/articles/spherical-model/smllnas5728.aux" 1519924515 1026 4f4c8c27e3955753c7936bb4c295bf94 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1246382020 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -115,13 +115,13 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1503343927 31343 93828589fb0cea665e553ee5a17ad2d4 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1519309182 1863403 f3ff9a4253bcb5fb9a9baaf0c572cb01 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1519309230 3854555 7499d7f12df913202bbb752d7ad9764a ""
-  "smllnas5728.aux" 1519664020 1026 4f4c8c27e3955753c7936bb4c295bf94 ""
-  "smllnas5728.out" 1519664020 134 e58fb7bb67133fbb8379a9db832a0094 ""
-  "smllnas5728.tex" 1519664019 3619 c0489014c4ccf7c736fca375db6c3de5 ""
+  "smllnas5728.aux" 1519924515 1026 4f4c8c27e3955753c7936bb4c295bf94 ""
+  "smllnas5728.out" 1519924515 134 e58fb7bb67133fbb8379a9db832a0094 ""
+  "smllnas5728.tex" 1519924514 5054 a53452b099d88a27766baf09d908b18d ""
   (generated)
+  "/home/gszep/Documents/articles/spherical-model/smllnas5728.log"
+  "/home/gszep/Documents/articles/spherical-model/smllnas5728.pdf"
   "smllnas5728.log"
-  "/home/gszep/projects/spherical-model/smllnas5728.pdf"
-  "/home/gszep/projects/spherical-model/smllnas5728.log"
-  "smllnas5728.aux"
   "smllnas5728.out"
   "smllnas5728.pdf"
+  "smllnas5728.aux"

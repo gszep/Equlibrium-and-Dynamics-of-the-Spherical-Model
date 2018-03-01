@@ -63,16 +63,15 @@ Here we follow the methods used to obtain exact solutions\cite{} in the
 field theoretic setting of the model.
 \begin{align*}
   \mathbf{\bar u}(t)=\mathbb{e}^{\mathbf{\Lambda}t}\mathbf\Gamma^{1/2}\mathbf{\bar u}(0)
-  +
 \end{align*}
 \subsection{Spectra of Discrete Laplacians}
 Using the Circular Diagonalization Theorem~\cite{} one can derive the
-eigenvalues $\lambda_N(k)$ of an $N\times N$ matrix $\mathbf X_N$ which
+eigenvalues $\lambda_N(k)$ of an $N\times N$ matrix $\mathbf X$ which
 represents the second-order central difference approximation to the
 second derivative along $N$ sites of a one dimensional ring of unit
 circumference.
 \begin{align}
-  \mathbf X_N :=
+  \mathbf X :=
   \begin{pmatrix}
     -2 & 1 &  &  &  & 1 \\
     1 & -2 & 1 &  &  &  \\
@@ -80,18 +79,54 @@ circumference.
     & & \ddots & \ddots & 1 & \\
     & & & 1 & -2 & 1 \\
     1 & & & & 1 & -2 \\
-  \end{pmatrix}\quad\\
+  \end{pmatrix}\\
   \begin{matrix}
-  \lambda_N(k)=2\left(\cos\left(\frac{2\pi k}{N}\right)-1\right) \\
-  k\in\{0,1,\cdots,N-1\}
-  \end{matrix}\qquad\qquad
+    \lambda_N(k)=2\left(\cos\left(\frac{2\pi k}{N}\right)-1\right) \\
+    k\in\{0,1,\cdots,N-1\}
+  \end{matrix}
+  \qquad
 \end{align}
 As the number of sites $N\rightarrow\infty$ the argument $k/N\in[0,1]$
-and the eigenvalues remain bounded. The probability density $\rho(\lambda)$
-can be expressed as a continuous integral:
+and the eigenvalues remain bounded $-2<\lambda<0$. By shifting and scaling
+the index $k\rightarrow\frac{k-N\pi}{2\pi}$ the eigenvalues are expressed as
+the familiar dispersion relation~\cite{}.
+\begin{align}
+  \lambda(x)&=
+  -2\left(\cos x+1\right)
+  \quad x\in[-\pi,\pi]
+\end{align}
+The discrete $M$-dimensional laplacian is simply the kronecker sum of one
+dimensional cases $\mathbf\Delta=\mathbf X\oplus\mathbf X\oplus\cdots\oplus\mathbf X$
+and thus its eigenvalues is simply the sum one dimensional dispersions~\cite{}.
+\begin{align}
+  \lambda(\mathbf{\bar x})&=
+  -2\sum_{x\in\mathbf{\bar x}}\left(\cos x+1\right)
+  \quad \mathbf{\bar x}\in[-\pi,\pi]^M
+\end{align}
+The probability density $\rho(\lambda)$ can be expressed as an integral
+over the region $\Omega=[-\pi,\pi]^M$ in complete analogue with the
+density of states.
 \begin{align*}
-  \rho(\lambda')&=\int\!\delta(\lambda'-\lambda(x))p(x)\,\mathrm{d}x \\
-  &=\sum_{x,\lambda'=\lambda(x)}\frac{p(x)}{|\partial_x\lambda(x)|} \\
-  &=\sum_{\alpha=0,1}\frac{\int_0^1\!\delta\left(x-\alpha\right)\,\mathrm{d}x}{Z|\partial_x\lambda|_{x=\alpha}}
+  \rho(\lambda')&=\frac{1}{Z_M}\int_{\Omega}\!\delta(\lambda'-\lambda(\mathbf{\bar x}))\,\mathrm{d}\mathbf{\bar x}
 \end{align*}
+We proceed with an element-wise change of variables $\mathbf{\bar u}=2\cos \mathbf{\bar x}$ and
+recognise that the integration region is $M$-fold symmetric across each
+component axis, which allows restrict the domain of integration to a
+hyperoctant. Thus in the new coordinates $\mathbf{\bar u}$ the
+$M$-dimensional hypercube region becomes $\Omega'=[-2,2]^M$.
+\begin{align*}
+  \rho(\lambda)&=\frac{1}{Z_M}
+  \int_{\Omega'}\!
+  \frac{\delta(\Lambda_M+\sum_{u\in\mathbf{\bar u}}u)}
+  {\sqrt{\prod_{u\in\mathbf{\bar u}}(1-u^2/4) }}
+  \,\mathrm{d}\mathbf{\bar u}
+  \qquad
+  \begin{matrix}
+    \Lambda_M=\lambda+2M \\
+    |\Lambda_M|\leq2M
+  \end{matrix}
+\end{align*}
+The tricky aspect of this integral writing down how the domain of integration
+$\Omega'\rightarrow\partial\Omega'(\Lambda_M)$ becomes of a function of $\Lambda_M$
+after using the delta function filtering property.
 \end{document}
