@@ -51,6 +51,10 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
@@ -174,6 +178,8 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/translator/dicts/translator-basic-dictionary/translator-basic-dictionary-English.dict
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/translator/dicts/translator-basic-dictionary/translator-basic-dictionary-English.dict
 INPUT /usr/share/texlive/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
@@ -236,6 +242,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
+INPUT /home/gszep/Documents/articles/spherical-model/figures/dos0.png
+INPUT /home/gszep/Documents/articles/spherical-model/figures/dos0.png
+INPUT /home/gszep/Documents/articles/spherical-model/figures/dos0.png
 INPUT /home/gszep/Documents/articles/spherical-model/figures/dos1.png
 INPUT /home/gszep/Documents/articles/spherical-model/figures/dos1.png
 INPUT /home/gszep/Documents/articles/spherical-model/figures/dos1.png
@@ -256,8 +265,10 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb

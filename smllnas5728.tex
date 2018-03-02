@@ -9,6 +9,7 @@
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{setspace}
+\usepackage{caption}
 
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
@@ -77,8 +78,7 @@ field theoretic setting of the model.
 Using the Circular Diagonalization Theorem~\cite{} one can derive the
 eigenvalues $\lambda_N(k)$ of an $N\times N$ matrix $\mathbf X$ which
 represents the second-order central difference approximation to the
-second derivative along $N$ sites of a one dimensional ring of unit
-circumference.
+second derivative along $N$ sites of a one dimensional ring.
 \begin{align}
   \mathbf X :=
   \begin{pmatrix}
@@ -112,19 +112,19 @@ and thus its eigenvalues is simply the sum one dimensional dispersions~\cite{}.
   -2\sum_{x\in\bar{\mathbf{x}}}\left(\cos x+1\right)
   \quad \bar{\mathbf{x}}\in[-\pi,\pi]^M
 \end{align}
-The probability density $\rho(\lambda)$ can be expressed as an integral
-over the region $\Omega=[-\pi,\pi]^M$ in complete analogue with the
-density of states.
+The probability density $\rho_M(\lambda)$ can be expressed as an integral
+over the $M$-dimensional hypercube region $\Omega=[-\pi,\pi]^M$ in complete
+analogue with the density of states.
 \begin{align*}
-  \rho(\lambda')&=\frac{1}{Z_M}\int_{\Omega}\!\delta(\lambda'-\lambda(\bar{\mathbf{x}}))\,\mathrm{d}\bar{\mathbf{x}}
+  \rho_M(\lambda')&=\frac{1}{Z_M}\int_{\Omega}\!\delta(\lambda'-\lambda(\bar{\mathbf{x}}))\,\mathrm{d}\bar{\mathbf{x}}
 \end{align*}
 We proceed with an element-wise change of variables $\bar{\mathbf{u}}=2\cos \bar{\mathbf{x}}$ and
 recognise that the integration region is $M$-fold symmetric across each
-component axis, which allows restrict the domain of integration to a
-hyperoctant. Thus in the new coordinates $\bar{\mathbf{u}}$ the
-$M$-dimensional hypercube region becomes $\Omega'=[-2,2]^M$.
+component axis, which allows restriction of the domain of integration to a
+hyperoctant. Given coordinates $\bar{\mathbf{u}}$ the region becomes $\Omega'=[-2,2]^M$.
+
 \begin{align*}
-  \rho(\lambda)&=\frac{1}{Z_M}
+  \rho_M(\lambda)&=\frac{1}{Z_M}
   \int_{\Omega'}\!
   \frac{\delta(\Lambda_M+\sum_{u\in\bar{\mathbf{u}}}u)}
   {\sqrt{\prod_{u\in\bar{\mathbf{u}}}(1-u^2/4) }}
@@ -135,16 +135,56 @@ $M$-dimensional hypercube region becomes $\Omega'=[-2,2]^M$.
     |\Lambda_M|\leq2M
   \end{matrix}
 \end{align*}
-The tricky aspect of this integral writing down how the domain of integration
-$\Omega'\rightarrow\partial\Omega'(\Lambda_M)$ becomes of a function of $\Lambda_M$
-after using the delta function filtering property.
+The delta function defines a hyperplane region $\partial\Omega$ with
+normal vector $\bar{\mathbf{n}}=(1,\cdots,1)$ and distance
+$\Lambda_M/\sqrt{M}$ from the origin. The final region of
+integration is the intersection between the constraint and hypercube
+$\partial\Omega'=\Omega'\cap\partial\Omega$
+is thus becomes of a function of $\Lambda_M$. Figure~\ref{fig:dos}
+illustrates this dependence in the $M=3$ case.
 \begin{figure}[H]
 \centering{}
-\includegraphics[scale=0.4]{figures/dos1}
-\includegraphics[scale=0.4]{figures/dos2}
-\caption{Isosurfaces of the integrand $M=3$ within the cubic integration
-region $\Omega'$ with delta constraint represented by a plane shifted from
-the origin by parameter $\Lambda_3$. This illustration }
+\captionsetup{justification=centering}
+\includegraphics[scale=0.3]{figures/dos0}
+\includegraphics[scale=0.3]{figures/dos1}
+\includegraphics[scale=0.3]{figures/dos2}
+\caption{Integration region $\partial\Omega'$ with contour mesh
+representing isosurfaces of the integrand}
 \label{fig:dos}
 \end{figure}
+\noindent
+In the one dimensional case the delta function filters the integrand
+and there are no more integrals left to do so one obtains the density
+directly. In the two dimensional case rotating into the plane of the
+constraint $\bar{\mathbf{v}}=\mathbf{R}(\frac{\pi}{4})\bar{\mathbf{u}}$
+--- where $\mathbf{R}(\theta)$ is the rotation matrix --- simplifies
+the limits and reveals yet another symmetry $\Lambda\rightarrow-\Lambda$.
+The final integral yields a complete elliptic integral of the first kind $K(m)$.
+\begin{align*}
+  \iint_{-2}^{2}\!
+  \frac{\delta(\Lambda_2+u+u')}
+  {\sqrt{(1-\frac{1}{4}u^2)(1-\frac{1}{4}u'^2)}}
+  \,\mathrm{d}u\mathrm{d}u'
+  &=
+  \iint_{-2}^{2}\!
+  \frac{\delta(\Lambda_2+v\sqrt{2})}
+  {\sqrt{(1-\frac{1}{8}(v+v')^2)(1-\frac{1}{8}(v-v')^2)}}
+  \,\mathrm{d}v\mathrm{d}v'\\
+  &=
+  \int_{-2\sqrt{2}+\frac{\sqrt{2}}{2}|\Lambda_2|}^{2\sqrt{2}-\frac{\sqrt{2}}{2}|\Lambda_2|}\!
+  \frac{1}
+  {\sqrt{(1-\frac{1}{8}(v'+\frac{\Lambda_2}{\sqrt{2}})^2)(1-\frac{1}{8}(v'-\frac{\Lambda_2}{\sqrt{2}})^2)}}
+  \,\mathrm{d}v'\\
+  &\sim
+  \frac{1}{|\Lambda_2|+4}
+  K\left(\left(\frac{|\Lambda_2|-4}{|\Lambda_2|+4}\right)^2\right)
+\end{align*}
+\begin{align}
+  \therefore \rho_1(\lambda)=
+  \frac{1}
+  {2\pi\sqrt{1-\frac{1}{4}(\lambda+2)^2}}
+  \qquad
+  \rho_2(\lambda)=\frac{4\pi^{-2}}{|\lambda+4|+4}
+    K\left(\left(\frac{|\lambda+4|-4}{|\lambda+4|+4}\right)^2\right)
+\end{align}
 \end{document}
