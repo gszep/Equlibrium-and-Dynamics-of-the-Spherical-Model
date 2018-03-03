@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1520082184 "smllnas5728.tex" "/home/gszep/Documents/articles/spherical-model/smllnas5728.pdf" "smllnas5728" 1520082185
+["pdflatex"] 1520082342 "smllnas5728.tex" "/home/gszep/Documents/articles/spherical-model/smllnas5728.pdf" "smllnas5728" 1520082866
   "/etc/texmf/web2c/texmf.cnf" 1519309125 1101 af7716885e081ab43982cab7b4672c1a ""
-  "/home/gszep/Documents/articles/spherical-model/smllnas5728.aux" 1520082184 1428 6b98ad30f864751d4b0cf9018bb8b519 ""
+  "/home/gszep/Documents/articles/spherical-model/smllnas5728.aux" 1520082343 1428 6b98ad30f864751d4b0cf9018bb8b519 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1246382020 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -156,13 +156,13 @@
   "figures/dos0.png" 1519991636 25498 958daa1a82a684663751c7c046521972 ""
   "figures/dos1.png" 1519991658 36427 9102293f851abca77120d507a1e7648a ""
   "figures/dos2.png" 1519991618 29287 f7585f04179d41283d31a981d4fc10dd ""
-  "smllnas5728.aux" 1520082184 1428 6b98ad30f864751d4b0cf9018bb8b519 ""
-  "smllnas5728.out" 1520082184 134 e58fb7bb67133fbb8379a9db832a0094 ""
-  "smllnas5728.tex" 1520082183 8649 fe3601fc9924186a045bb0a46055490d ""
+  "smllnas5728.aux" 1520082343 1428 6b98ad30f864751d4b0cf9018bb8b519 ""
+  "smllnas5728.out" 1520082343 134 e58fb7bb67133fbb8379a9db832a0094 ""
+  "smllnas5728.tex" 1520082342 8652 6148d7095de03ab8e4db0095d9bbaf2e ""
   (generated)
-  "smllnas5728.log"
   "/home/gszep/Documents/articles/spherical-model/smllnas5728.log"
-  "smllnas5728.out"
   "smllnas5728.pdf"
-  "smllnas5728.aux"
+  "smllnas5728.out"
   "/home/gszep/Documents/articles/spherical-model/smllnas5728.pdf"
+  "smllnas5728.log"
+  "smllnas5728.aux"
