@@ -242,15 +242,12 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
-INPUT /home/gszep/Documents/articles/spherical-model/figures/dos0.png
-INPUT /home/gszep/Documents/articles/spherical-model/figures/dos0.png
-INPUT /home/gszep/Documents/articles/spherical-model/figures/dos0.png
-INPUT /home/gszep/Documents/articles/spherical-model/figures/dos1.png
-INPUT /home/gszep/Documents/articles/spherical-model/figures/dos1.png
-INPUT /home/gszep/Documents/articles/spherical-model/figures/dos1.png
-INPUT /home/gszep/Documents/articles/spherical-model/figures/dos2.png
-INPUT /home/gszep/Documents/articles/spherical-model/figures/dos2.png
-INPUT /home/gszep/Documents/articles/spherical-model/figures/dos2.png
+INPUT /home/gszep/Documents/articles/spherical-model/figures/density.png
+INPUT /home/gszep/Documents/articles/spherical-model/figures/density.png
+INPUT /home/gszep/Documents/articles/spherical-model/figures/density.png
+INPUT /home/gszep/Documents/articles/spherical-model/figures/interaction.png
+INPUT /home/gszep/Documents/articles/spherical-model/figures/interaction.png
+INPUT /home/gszep/Documents/articles/spherical-model/figures/interaction.png
 INPUT /home/gszep/Documents/articles/spherical-model/smllnas5728.aux
 INPUT /home/gszep/Documents/articles/spherical-model/smllnas5728.out
 INPUT /home/gszep/Documents/articles/spherical-model/smllnas5728.out
@@ -260,6 +257,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
@@ -273,4 +271,3 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
-INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb

@@ -160,65 +160,41 @@ distribution $\alpha(\lambda)$. It becomes clear that the eigenvalue
 density of a kronecker sum of matrices is the convolution of the densities
 of those matrices.
 \begin{align}
-  \rho_M(\lambda)&=\underbrace{
-  \alpha(\lambda)*\alpha(\lambda)*\cdots*\alpha(\lambda)}_{M}\\
-  \alpha(\lambda)&=\frac{1}{2\pi\sqrt{1-\left(\frac{\lambda+2}{2}\right)^2}}
-  \Pi\left(\frac{\lambda+2}{2}\right)\\
-  \qquad\Pi(x)&=
-  \begin{cases}
-    s \\
-  \end{cases}
+  \rho_M(\lambda)=\underbrace{
+  \alpha(\lambda)*\alpha(\lambda)*\cdots*\alpha(\lambda)}_{M}\qquad\qquad\qquad\\
+  \begin{matrix}
+    \alpha(\lambda)=
+      \frac{1}{2\pi\sqrt{1-\left(\frac{\lambda+2}{2}\right)^2}}
+      \Pi\left(\frac{\lambda+2}{2}\right)
+    &&
+    \Pi(x)=
+      \begin{cases}
+        1 & |x|<1\\
+        0 & |x|\geq1\\
+      \end{cases}
+  \end{matrix}
 \end{align}
-The delta function defines a hyperplane region $\partial\Omega$ with
-normal vector $\bar{\mathbf{n}}=(1,\cdots,1)$ and distance
-$\Lambda_M/\sqrt{M}$ from the origin. The final region of
-integration is the intersection between the constraint and hypercube
-$\partial\Omega'=\Omega'\cap\partial\Omega$
-is thus becomes of a function of $\Lambda_M$. Figure~\ref{fig:dos}
-illustrates this dependence in the $M=3$ case.
 \begin{figure}[H]
 \centering{}
 \captionsetup{justification=centering}
-\includegraphics[scale=0.3]{figures/dos0}
-\includegraphics[scale=0.3]{figures/dos1}
-\includegraphics[scale=0.3]{figures/dos2}
-\caption{Integration region $\partial\Omega'$ with contour mesh
-representing isosurfaces of the integrand}
+\includegraphics[scale=0.45]{figures/density}
+\caption{Eigenvalue distributions $\rho_M(\lambda)$ of the $M$-dimensional Laplacian}
 \label{fig:dos}
 \end{figure}
 \noindent
-In the one dimensional case the delta function filters the integrand
-and there are no more integrals left to do so one obtains the density
-directly. In the two dimensional case rotating into the plane of the
-constraint $\bar{\mathbf{v}}=\mathbf{R}(\frac{\pi}{4})\bar{\mathbf{u}}$
---- where $\mathbf{R}(\theta)$ is the rotation matrix --- simplifies
-the limits and reveals yet another symmetry $\Lambda\rightarrow-\Lambda$.
-The final integral yields a complete elliptic integral of the first kind $K(m)$.
-\begin{align*}
-  \iint_{-2}^{2}\!
-  \frac{\delta(\Lambda_2+u+u')}
-  {\sqrt{(1-\frac{1}{4}u^2)(1-\frac{1}{4}u'^2)}}
-  \,\mathrm{d}u\mathrm{d}u'
-  &=
-  \iint_{-2}^{2}\!
-  \frac{\delta(\Lambda_2+v\sqrt{2})}
-  {\sqrt{(1-\frac{1}{8}(v+v')^2)(1-\frac{1}{8}(v-v')^2)}}
-  \,\mathrm{d}v\mathrm{d}v'\\
-  &=
-  \int_{-2\sqrt{2}+\frac{\sqrt{2}}{2}|\Lambda_2|}^{2\sqrt{2}-\frac{\sqrt{2}}{2}|\Lambda_2|}\!
-  \frac{1}
-  {\sqrt{(1-\frac{1}{8}(v'+\frac{\Lambda_2}{\sqrt{2}})^2)(1-\frac{1}{8}(v'-\frac{\Lambda_2}{\sqrt{2}})^2)}}
-  \,\mathrm{d}v'\\
-  &\sim
-  \frac{1}{|\Lambda_2|+4}
-  K\left(\left(\frac{|\Lambda_2|-4}{|\Lambda_2|+4}\right)^2\right)
-\end{align*}
-\begin{align}
-  \therefore \rho_1(\lambda)=
-  \frac{1}
-  {2\pi\sqrt{1-\frac{1}{4}(\lambda+2)^2}}
-  \qquad
-  \rho_2(\lambda)=\frac{4\pi^{-2}}{|\lambda+4|+4}
-    K\left(\left(\frac{|\lambda+4|-4}{|\lambda+4|+4}\right)^2\right)
-\end{align}
+The one dimensional density has two Van Hove singularities at $\lambda=-4,0$
+given by the arcsine law $\alpha(\lambda)$, whereas the two dimensional
+case has one at $\lambda=-4$ given by the complete elliptic integral
+of the first kind $K(m)$. Figure~\ref{fig:dos} reveals that in higher
+dimensions singularities do not occur; instead there appear to be
+discontinuities in the higher order derivatives. The density smooths out
+as repeated convolutions bring it to a normal distrubtion; this is another
+way to state the Central Limit Theorem~\cite{}.
+\begin{figure}[H]
+\centering{}
+\captionsetup{justification=centering}
+\includegraphics[scale=0.45]{figures/interaction}
+\caption{Eigenvalue distributions $\rho_M(\lambda)$ of the $M$-dimensional Laplacian}
+\label{fig:spectrum}
+\end{figure}
 \end{document}
