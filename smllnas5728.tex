@@ -133,8 +133,42 @@ hyperoctant. Given coordinates $\bar{\mathbf{u}}$ the region becomes $\Omega'=[-
   \begin{matrix}
     \Lambda_M=\lambda+2M \\
     |\Lambda_M|\leq2M
-  \end{matrix}
+  \end{matrix}\\
+  &=\frac{1}{2\pi Z_M}
+  \int_{-\infty}^{\infty}\int_{\Omega'}\!
+  \frac{\mathbb{e}^{\Lambda_M\mathbb{i}k}\exp[\sum_{u\in\bar{\mathbf{u}}}u\mathbb{i}k]}
+  {\sqrt{\prod_{u\in\bar{\mathbf{u}}}(1-u^2/4) }}
+  \,\mathrm{d}\bar{\mathbf{u}}\mathrm{d}k\\
+  &=\frac{1}{2\pi Z_M}
+  \int_{-\infty}^{\infty}\mathbb{e}^{\Lambda_M\mathbb{i}k}
+  \prod_{u\in\bar{\mathbf{u}}}\int_{-2}^{2}\!
+  \frac{\mathbb{e}^{u\mathbb{i}k}}
+  {\sqrt{1-u^2/4}}
+  \,\mathrm{d}u\mathrm{d}k
 \end{align*}
+The fourier representation of the delta function allowed the
+factorisation of the integral. We recognise a repeated Bessel
+integral and replace it with the Bessel function of the first kind
+$J_n(k)$, leaving only a fourier transform which we define
+$ \mathcal{F} :
+f\rightarrow \frac{1}{\sqrt{2\pi}}
+\int_{-\infty}^{\infty}f(k)e^{\mathbb{i}\Lambda k}\mathrm{d}k$. To clean
+the formula up even further we may use the convolution
+theorem to deal with the powers of $M$, leaving only the fourier
+transform of the Bessel function $J_0(k)$, which is the arcsine
+distribution $\alpha(\lambda)$. It becomes clear that the eigenvalue
+density of a kronecker sum of matrices is the convolution of the densities
+of those matrices.
+\begin{align}
+  \rho_M(\lambda)&=\underbrace{
+  \alpha(\lambda)*\alpha(\lambda)*\cdots*\alpha(\lambda)}_{M}\\
+  \alpha(\lambda)&=\frac{1}{2\pi\sqrt{1-\left(\frac{\lambda+2}{2}\right)^2}}
+  \Pi\left(\frac{\lambda+2}{2}\right)\\
+  \qquad\Pi(x)&=
+  \begin{cases}
+    s
+  \end{cases}
+\end{align}
 The delta function defines a hyperplane region $\partial\Omega$ with
 normal vector $\bar{\mathbf{n}}=(1,\cdots,1)$ and distance
 $\Lambda_M/\sqrt{M}$ from the origin. The final region of
