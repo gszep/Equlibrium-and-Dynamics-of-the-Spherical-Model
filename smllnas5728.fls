@@ -245,9 +245,12 @@ INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /home/gszep/Documents/articles/spherical-model/figures/density.png
 INPUT /home/gszep/Documents/articles/spherical-model/figures/density.png
 INPUT /home/gszep/Documents/articles/spherical-model/figures/density.png
-INPUT /home/gszep/Documents/articles/spherical-model/figures/interaction.png
-INPUT /home/gszep/Documents/articles/spherical-model/figures/interaction.png
-INPUT /home/gszep/Documents/articles/spherical-model/figures/interaction.png
+INPUT /home/gszep/Documents/articles/spherical-model/figures/interaction1d.png
+INPUT /home/gszep/Documents/articles/spherical-model/figures/interaction1d.png
+INPUT /home/gszep/Documents/articles/spherical-model/figures/interaction1d.png
+INPUT /home/gszep/Documents/articles/spherical-model/figures/interaction2d.png
+INPUT /home/gszep/Documents/articles/spherical-model/figures/interaction2d.png
+INPUT /home/gszep/Documents/articles/spherical-model/figures/interaction2d.png
 INPUT /home/gszep/Documents/articles/spherical-model/smllnas5728.aux
 INPUT /home/gszep/Documents/articles/spherical-model/smllnas5728.out
 INPUT /home/gszep/Documents/articles/spherical-model/smllnas5728.out

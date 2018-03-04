@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1520100995 "smllnas5728.tex" "/home/gszep/Documents/articles/spherical-model/smllnas5728.pdf" "smllnas5728" 1520100997
+["pdflatex"] 1520103453 "smllnas5728.tex" "/home/gszep/Documents/articles/spherical-model/smllnas5728.pdf" "smllnas5728" 1520103454
   "/etc/texmf/web2c/texmf.cnf" 1519309125 1101 af7716885e081ab43982cab7b4672c1a ""
-  "/home/gszep/Documents/articles/spherical-model/smllnas5728.aux" 1520100996 1687 5e59a4082b5e7aee534d14580884cf14 ""
+  "/home/gszep/Documents/articles/spherical-model/smllnas5728.aux" 1520103454 1841 d4c75ba21c2f94e15d3c74f1481a61b8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1246382020 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -154,14 +154,15 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1519309182 1863403 f3ff9a4253bcb5fb9a9baaf0c572cb01 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1519309230 3854555 7499d7f12df913202bbb752d7ad9764a ""
   "figures/density.png" 1520100645 51136 1924e56db0d791d439bc596892880e4e ""
-  "figures/interaction.png" 1520100673 96026 97c93c6cb02bb0a66b86e468b8e95459 ""
-  "smllnas5728.aux" 1520100996 1687 5e59a4082b5e7aee534d14580884cf14 ""
-  "smllnas5728.out" 1520100996 134 e58fb7bb67133fbb8379a9db832a0094 ""
-  "smllnas5728.tex" 1520100994 7647 3380ee800779e05a69b369a5c530dcb1 ""
+  "figures/interaction1d.png" 1520100673 96026 97c93c6cb02bb0a66b86e468b8e95459 ""
+  "figures/interaction2d.png" 1520101621 74945 7c56b8634b4e431eb5d69f4a8b103a46 ""
+  "smllnas5728.aux" 1520103454 1841 d4c75ba21c2f94e15d3c74f1481a61b8 ""
+  "smllnas5728.out" 1520103454 134 e58fb7bb67133fbb8379a9db832a0094 ""
+  "smllnas5728.tex" 1520103453 7916 985971c54d46fc0d57172c194bf70b2c ""
   (generated)
-  "/home/gszep/Documents/articles/spherical-model/smllnas5728.pdf"
   "/home/gszep/Documents/articles/spherical-model/smllnas5728.log"
-  "smllnas5728.log"
   "smllnas5728.out"
-  "smllnas5728.pdf"
+  "/home/gszep/Documents/articles/spherical-model/smllnas5728.pdf"
+  "smllnas5728.log"
   "smllnas5728.aux"
+  "smllnas5728.pdf"

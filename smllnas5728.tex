@@ -72,7 +72,11 @@ dynamics by introducting the discretised Laplacian $\Delta$ as a diffusive term.
 Here we follow the methods used to obtain exact solutions\cite{} in the
 field theoretic setting of the model.
 \begin{align*}
-  \bar{\mathbf{u}}(t)=\mathbb{e}^{\mathbf{\Lambda}t}\mathbf\Gamma^{1/2}\bar{\mathbf{u}}(0)
+  \bar{\mathbf{u}}(t)=
+    \mathbb{e}^{\mathbf{\Lambda}t}\mathbf\Gamma^{1/2}\bar{\mathbf{u}}(0)
+    +\int^t\!\mathbb{e}^{\mathbf{\Lambda}(t-t')
+    \mathbf\Gamma^{1/2}(t')\mathbf\Gamma^{1/2}(t)}\boldsymbol\xi(t')
+    \,\mathrm{d}t'
 \end{align*}
 \subsection{Spectra of Discrete Laplacians}
 Using the Circular Diagonalization Theorem~\cite{} one can derive the
@@ -193,8 +197,10 @@ way to state the Central Limit Theorem~\cite{}.
 \begin{figure}[H]
 \centering{}
 \captionsetup{justification=centering}
-\includegraphics[scale=0.45]{figures/interaction}
-\caption{Eigenvalue distributions $\rho_M(\lambda)$ of the $M$-dimensional Laplacian}
+\includegraphics[scale=0.3]{figures/interaction1d}
+\includegraphics[scale=0.3]{figures/interaction2d}
+\caption{Left/Right: Random interaction spectra $S(\lambda|\mu)$ for variable
+values of the order parameter $\mu$ which introduces one/two dimensional laplacian}
 \label{fig:spectrum}
 \end{figure}
 \end{document}
