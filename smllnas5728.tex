@@ -33,6 +33,9 @@
 \providecommand\citep{\cite}
 \providecommand\citealt{\cite}
 
+\DeclareMathOperator*{\E}{\mathbb{E}}
+\DeclareMathOperator*{\V}{\mathbb{V}}
+
 
 \makeatletter
 \makeatother
@@ -44,41 +47,123 @@
 \begin{document}
 
 \title{
-On the affect of the Laplacian in equlibration
+On the affect of the Laplacian in equlibration\\
 dynamics of the Spherical Model
 }
 
 \author{Gregory Szep}
 \affil{King's College London}
 \date{\today}
-
 \maketitle
-Consider a system of $N$ linearly interacting degrees of freedom. We collect
-them into a vector $\bar{\mathbf{s}}(t) = \left(\,s_1(t),\cdots, s_N(t)\,\right)$
-and represent their interactions with random coupling matrix $\mathbf{J}(t)$.
-We subject them to a global constraint: lying on an $N$-dimensional sphere of
-radius $N$, enforced by lagrange multiplier $\mu$. We write down the
-Langevin Equation of motion with external noise $\boldsymbol\xi(t)$, dropping
-the explicit time dependence for brevity.
-\begin{gather}
-\partial_t\bar{\mathbf{s}} = (\mathbf{J}-\mu)\bar{\mathbf{s}}+\boldsymbol\xi\quad\\
-\text{where}\quad\mu = \frac{1}{N}\bar{\mathbf{s}}^{\top}\left(\mathbf{J}\bar{\mathbf{s}}+\boldsymbol\xi\right)\quad\text{enforces constraint}\quad|\bar{\mathbf{s}}(t)|^2=N
-\end{gather}
-The following is an attempt to characterise the statistical differences between
-spatial and non-spatial interactions, and their effect on the equilibration
-dynamics by introducting the discretised Laplacian $\Delta$ as a diffusive term.
 
-\section{Analytical Solutions}
-Here we follow the methods used to obtain exact solutions\cite{} in the
-field theoretic setting of the model.
-\begin{align*}
-  \bar{\mathbf{u}}(t)=
-    \mathbb{e}^{\mathbf{\Lambda}t}\mathbf\Gamma^{1/2}\bar{\mathbf{u}}(0)
-    +\int^t\!\mathbb{e}^{\mathbf{\Lambda}(t-t')
-    \mathbf\Gamma^{1/2}(t')\mathbf\Gamma^{1/2}(t)}\boldsymbol\xi(t')
-    \,\mathrm{d}t'
-\end{align*}
-\subsection{Spectra of Discrete Laplacians}
+\section{Intorduction and Motivation}
+\subsection{Motivation for the Model}
+Consider $N$ nodes in a directed network passing around a finite resource.
+Eventually the resource will equilibrate within the network solely due it its
+finiteness. We wish to study the equilibration timescales of such a problem,
+where finiteness of the resource and connectedness of the network may be
+expressed is a variety of ways, giving rise different flavours of the
+Sherrington-Kirkpatrick spherical model.
+\\\\
+Exact dynamical solutions can be obtained if finiteness of the resource
+is the expressed as a constant $L_2$ norm across all the nodes. In addition,
+if the connectedness of the network is known, it may be used to obtain explicit
+expressions --- at least in some limit --- for the dynamics of the resource,
+and hence timescales can be extracted.
+\\\\
+By intorducing the laplacian, we may study the affect of spatial connectivity
+on the equilibration timescales. Is possible to extract the dimension
+of the manifold that the nodes lie on simply from observed correlations in
+the resource? This work may have applications in dimensionality reduction methods.
+\subsection{Analytical Solution of the Langevin Equation}
+Let the resource across $N$ nodes be represented by vector $s(t)\in\mathbb{R}^N$,
+and the weighted directed connections between them be an $N\times N$ matrix
+$\mathbf{J}$. This matrix represents the rate at which the resource is passed from
+node to node. Without finiteness, we can solve the linear equations, revealing that
+the resource at different nodes would diverge or go to zero depending on the sign
+of the eigenvalues of $\mathbf{J}$ which does not seem reasonable.
+\\\\
+Therefore a
+lagrange multiplier $\mu(t)\in\mathbb{R}$ is introduced which holds the $L_2$
+norm of vector $s(t)$ constant. This implicitly introduces a nonlinearity. The
+dynamics is cast as a Langevin Equation with white noise $\xi(t)\in\mathbb{R}^N$
+which is characterised by its moments $\langle\dots\rangle$. Eventually the resource
+will equilibrate due it its finiteness, subject to the amplitude of the noise.
+The symbol $\mathbb{1}$ represents the diagonal identity.
+\begin{align}
+  \partial_t s = \big[\mathbf{J}-\mathbb{1}\mu(t)\big]s+\xi
+\end{align}
+\vspace{-40}
+\begin{align}
+  \left\langle\xi(t)\right\rangle=\mathbb{0}\qquad
+  \left\langle\xi(t)\xi(t')\right\rangle=2T\mathbb{1}\delta(t-t')
+\end{align}
+\vspace{-40}
+\begin{align}
+\text{where}\quad\mu(t) = \frac{1}{N}s^{\top}\left(\mathbf{J}s+\xi\right)
+\quad\text{enforces constraint}\quad|s(t)|^2=N
+\label{eq:constraint}
+\end{align}
+It is possible to solve the inhomogenous time-dependent ordinary linear system of
+differential equations for $s(t)$ using integrating factor method and rotate
+into the eigenbasis $\sigma_{\lambda}(t)\in\mathbb{R}$ of matrix $\mathbf{J}$. This does not
+yield a closed form for $\mu(t)$ however; the derivation by Cugliandolo, L. F.
+and Dean D. S.~\cite{} yields the moments below for the uniform
+initial condition $\sigma_{\lambda}(0)=1$. Here the complexity lies in performing
+the inverse laplace transform $\mathcal{L}^{-1}$ which in turn depends on the
+eigenvalue distribution $p(\lambda\in\mathbf{J})$.
+\begin{align}
+  \langle \sigma_{\lambda}(t)\rangle=
+    \frac{\mathbb{e}^{\lambda t}}{\sqrt{\Gamma(t)}}\qquad
+  \langle \sigma_{\lambda}(t)\sigma_{\lambda'}(t')\rangle=
+\end{align}
+\vspace{-30}
+\begin{align}
+  \Gamma(t)=
+    \sum_{k=0}^{\infty}(2T)^k
+    \mathcal{L}^{-1}\left[\Phi(s)^k\right]\quad\text{where}
+    \quad
+    \Phi(s)=\int\frac{p(\lambda\in\mathbf{J})}{s-2\lambda}\mathrm{d}\lambda
+    \label{eq:gamma}
+\end{align}
+\pagebreak
+\subsection{Hermitian Wigner Ensemble}
+Suppose the weighted directed connections between nodes be a random matrix
+$\mathbf{H}$ taken Hermitian Wigner matrices, whos upper triangle elements
+$[\mathbf{H}]_{ij}$ are distributed according to a density $\mathbb{P}$ with
+subexponential tails~\cite{} with expectation $\E$ and variance
+$\V$, such that in the limit $N\rightarrow\infty$ the eigenvalue
+spectrum converges to the semicircle law $p(\lambda\in\mathbf{H})\rightarrow\cap(\lambda|J)$.
+Below the symbols $\mathbf{0}$ and $\mathbf{1}$ denote constant matrices of zeros and ones
+respectively.
+\begin{align}
+\cap(\lambda|J)=\frac{1}{2\pi J^2}\sqrt{4J^2-\lambda^2}\label{eq:semicircle}
+\quad\quad\\
+\E[\mathbf{H}]=\mathbf{0}
+\quad
+\V[\mathbf{H}]=\frac{J^2}{N}(\mathbf{1}+\mathbb{1})
+\quad\\
+\mathbb{P}\left(
+t^\alpha\leq
+\left|[\mathbf{H}]_{ij}\right|
+\right)\leq e^{-t}
+\quad
+\forall t\geq\alpha,\forall i,j
+\end{align}
+To match the terms of the expansion in~(\ref{eq:gamma}) to known inverse laplace
+transforms some algebraic trickery is required: after substituting the limiting
+density~(\ref{eq:semicircle}) into the second equation in~(\ref{eq:gamma}) the
+infinite sum is evaluated first. Then expand that result in terms the denominator
+part that is a function of $s$. Only then do the terms match the laplace transforms
+of modified Bessel functions of the first kind $\frac{I_{l}(4Jt)}{t}$.
+These has well-known asymtotics for $z\rightarrow\infty$
+\begin{align}
+  \Phi(s)=\frac{s-\sqrt{s^2-16J^2}}{8J^2}\qquad
+  \Gamma(t)=\frac{1}{2T}
+  \sum_{l=1}^{\infty}l\left(\frac{T}{J}\right)^{l}\frac{I_{l}(4Jt)}{t}
+\end{align}
+
+\subsection{Discrete Laplacians}
 Using the Circular Diagonalization Theorem~\cite{} one can derive the
 eigenvalues $\lambda_N(k)$ of an $N\times N$ matrix $\mathbf X$ which
 represents the second-order central difference approximation to the
@@ -194,6 +279,17 @@ dimensions singularities do not occur; instead there appear to be
 discontinuities in the higher order derivatives. The density smooths out
 as repeated convolutions bring it to a normal distrubtion; this is another
 way to state the Central Limit Theorem~\cite{}.
+\\\\
+Substituting the limiting density~(\ref{eq:}) into the second equation
+in~(\ref{eq:gamma}) the inverse laplace transform of the powers can be
+performed immediately.
+\begin{align}
+  \Phi(s)=\frac{1}{\sqrt{8s + s^2}}
+  \qquad
+  \Gamma(t)=2Te^{-4t}
+  \sum_{k=0}^{\infty}\frac{(2Tt)^{k-1}}{(k-1)!}
+  {}_0F_1(\frac{1+k}{2},4t^2)
+\end{align}
 \begin{figure}[H]
 \centering{}
 \captionsetup{justification=centering}
