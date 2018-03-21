@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.22)  19 MAR 2018 19:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.22)  21 MAR 2018 13:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1311,27 +1311,27 @@ LaTeX Font Info:    Try loading font information for U+bbold on input line 47.
  (/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd)
 \c__siunitx_mathtt_int=\count276
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--78
+Underfull \hbox (badness 10000) in paragraph at lines 61--81
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--78
+Underfull \hbox (badness 10000) in paragraph at lines 61--81
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--93
+Underfull \hbox (badness 10000) in paragraph at lines 82--96
 
  []
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-/home/gszep/Documents/articles/spherical-model/smllnas5728.tex:96: Illegal unit of measure (pt inserted).
+/home/gszep/Documents/articles/spherical-model/smllnas5728.tex:99: Illegal unit of measure (pt inserted).
 <to be read again> 
                    \vskip 
-l.96 \vspace{-40}
+l.99 \vspace{-40}
                  
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1340,10 +1340,10 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-/home/gszep/Documents/articles/spherical-model/smllnas5728.tex:101: Illegal unit of measure (pt inserted).
+/home/gszep/Documents/articles/spherical-model/smllnas5728.tex:104: Illegal unit of measure (pt inserted).
 <to be read again> 
                    \vskip 
-l.101 \vspace{-40}
+l.104 \vspace{-40}
                   
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1352,10 +1352,10 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-/home/gszep/Documents/articles/spherical-model/smllnas5728.tex:120: Illegal unit of measure (pt inserted).
+/home/gszep/Documents/articles/spherical-model/smllnas5728.tex:123: Illegal unit of measure (pt inserted).
 <to be read again> 
                    \vskip 
-l.120 \vspace{-30}
+l.123 \vspace{-30}
                   
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1364,58 +1364,86 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-[2] [3] [4] <figures/density.png, id=73, 634.37pt x 398.48875pt>
+[2] [3] [4] <figures/density.png, id=78, 634.37pt x 398.48875pt>
 File: figures/density.png Graphic file (type png)
  <use figures/density.png>
-Package pdftex.def Info: figures/density.png used on input line 269.
+Package pdftex.def Info: figures/density.png used on input line 272.
 (pdftex.def)             Requested size: 285.46385pt x 179.31828pt.
 
 
-LaTeX Warning: Reference `eq:' on page 5 undefined on input line 283.
+LaTeX Warning: Reference `eq:' on page 5 undefined on input line 286.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--286
+Underfull \hbox (badness 10000) in paragraph at lines 276--289
 
  []
 
-[5 </home/gszep/Documents/articles/spherical-model/figures/density.png>] <figures/interaction1d.png, id=88, 627.34375pt x 608.2725pt>
+[5 </home/gszep/Documents/articles/spherical-model/figures/density.png>]
+/home/gszep/Documents/articles/spherical-model/smllnas5728.tex:299: Missing number, treated as zero.
+<to be read again> 
+                   $
+l.299 convolutions $\box$
+                          the individual limiting densities, provided that
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+LaTeX Warning: Citation `' on page 6 undefined on input line 300.
+
+
+LaTeX Warning: Citation `' on page 6 undefined on input line 300.
+
+/home/gszep/Documents/articles/spherical-model/smllnas5728.tex:311: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \vskip 
+l.311 \vspace{-30}
+                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+<figures/interaction1d.png, id=93, 627.34375pt x 608.2725pt>
 File: figures/interaction1d.png Graphic file (type png)
  <use figures/interaction1d.png>
-Package pdftex.def Info: figures/interaction1d.png used on input line 296.
+Package pdftex.def Info: figures/interaction1d.png used on input line 323.
 (pdftex.def)             Requested size: 188.20457pt x 182.48315pt.
- <figures/interaction2d.png, id=89, 627.34375pt x 608.2725pt>
+ <figures/interaction2d.png, id=94, 627.34375pt x 608.2725pt>
 File: figures/interaction2d.png Graphic file (type png)
  <use figures/interaction2d.png>
-Package pdftex.def Info: figures/interaction2d.png used on input line 297.
+Package pdftex.def Info: figures/interaction2d.png used on input line 324.
 (pdftex.def)             Requested size: 188.20457pt x 182.48315pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 302.
- [6 </home/gszep/Documents/articles/spherical-model/figures/interaction1d.png> </home/gszep/Documents/articles/spherical-model/figures/interaction2d.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 302.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 329.
+ [6] [7 </home/gszep/Documents/articles/spherical-model/figures/interaction1d.png> </home/gszep/Documents/articles/spherical-model/figures/interaction2d.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 329.
  (/home/gszep/Documents/articles/spherical-model/smllnas5728.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 302.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 302.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 329.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 329.
 Package rerunfilecheck Info: File `smllnas5728.out' has not changed.
-(rerunfilecheck)             Checksum: FCDDEF41B9D22A885BB5BC837D1CF223;370.
+(rerunfilecheck)             Checksum: DC332317D5A9743ADC4B81BD4C960F7D;459.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 302.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 329.
  ) 
 Here is how much of TeX's memory you used:
- 19875 strings out of 493029
- 368100 string characters out of 6136234
- 427236 words of memory out of 5000000
- 23135 multiletter control sequences out of 15000+600000
+ 19882 strings out of 493029
+ 368177 string characters out of 6136234
+ 428236 words of memory out of 5000000
+ 23137 multiletter control sequences out of 15000+600000
  10410 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,18n,42p,10362b,748s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on /home/gszep/Documents/articles/spherical-model/smllnas5728.pdf (6 pages, 427824 bytes).
+Output written on /home/gszep/Documents/articles/spherical-model/smllnas5728.pdf (7 pages, 431685 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
- 131 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 180 PDF objects out of 1000 (max. 8388607)
+ 144 compressed objects within 2 object streams
+ 35 named destinations out of 1000 (max. 500000)
+ 64 words of extra memory for PDF output out of 10000 (max. 10000000)
 

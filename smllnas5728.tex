@@ -58,7 +58,7 @@ dynamics of the Spherical Model
 
 \section{Intorduction and Motivation}
 \subsection{Motivation for the Model}
-Consider $N$ nodes in a directed network passing around a finite resource.
+Consider $N$ nodes in a undirected network passing around a finite resource.
 Eventually the resource will equilibrate within the network solely due it its
 finiteness. We wish to study the equilibration timescales of such a problem,
 where finiteness of the resource and connectedness of the network may be
@@ -71,17 +71,20 @@ if the connectedness of the network is known, it may be used to obtain explicit
 expressions --- at least in some limit --- for the dynamics of the resource,
 and hence timescales can be extracted.
 \\\\
-By intorducing the laplacian, we may study the affect of spatial connectivity
-on the equilibration timescales. Is possible to extract the dimension
-of the manifold that the nodes lie on simply from observed correlations in
-the resource? This work may have applications in dimensionality reduction methods.
+The Wigner ensemble is used to generate the connectivity in an attempt to
+minimise a priori assumptions on it. Then intorducing the $M$-dimensional
+periodic lattice laplacian allows the study of the model as it departs from
+randomness and gains spatial structure. Is possible to extract the dimension
+of the manifold that the nodes lie on simply from observed correlations and
+equilibration timescales in the resource? This work may have applications in
+dimensionality reduction methods.
 \subsection{Analytical Solution of the Langevin Equation}
 Let the resource across $N$ nodes be represented by vector $s(t)\in\mathbb{R}^N$,
-and the weighted directed connections between them be an $N\times N$ matrix
-$\mathbf{J}$. This matrix represents the rate at which the resource is passed from
-node to node. Without finiteness, we can solve the linear equations, revealing that
+and the weighted undirected connections between them be a Hermitian $N\times N$ matrix
+$\mathbf{J}$. This matrix represents the rate at which the resource is passed between
+nodes. Without finiteness, we can solve the linear equations, revealing that
 the resource at different nodes would diverge or go to zero depending on the sign
-of the eigenvalues of $\mathbf{J}$ which does not seem reasonable.
+of the eigenvalues of $\mathbf{J}$. This does not seem reasonable.
 \\\\
 Therefore a
 lagrange multiplier $\mu(t)\in\mathbb{R}$ is introduced which holds the $L_2$
@@ -128,8 +131,8 @@ eigenvalue distribution $p(\lambda\in\mathbf{J})$.
 \end{align}
 \pagebreak
 \subsection{Hermitian Wigner Ensemble}
-Suppose the weighted directed connections between nodes be a random matrix
-$\mathbf{H}$ taken Hermitian Wigner matrices, whos upper triangle elements
+Suppose the connections between nodes are given by a random matrix
+$\mathbf{H}$ taken from the Hermitian Wigner ensemble, whos upper triangle elements
 $[\mathbf{H}]_{ij}$ are distributed according to a density $\mathbb{P}$ with
 subexponential tails~\cite{} with expectation $\E$ and variance
 $\V$, such that in the limit $N\rightarrow\infty$ the eigenvalue
@@ -153,16 +156,16 @@ t^\alpha\leq
 To match the terms of the expansion in~(\ref{eq:gamma}) to known inverse laplace
 transforms some algebraic trickery is required: after substituting the limiting
 density~(\ref{eq:semicircle}) into the second equation in~(\ref{eq:gamma}) the
-infinite sum is evaluated first. Then expand that result in terms the denominator
+infinite sum is evaluated first. Then the result is expanded in terms the denominator
 part that is a function of $s$. Only then do the terms match the laplace transforms
 of modified Bessel functions of the first kind $\frac{I_{l}(4Jt)}{t}$.
-These has well-known asymtotics for $z\rightarrow\infty$
+These have well-known asymtotics for $z\rightarrow\infty$
 \begin{align}
   \Phi(s)=\frac{s-\sqrt{s^2-16J^2}}{8J^2}\qquad
   \Gamma(t)=\frac{1}{2T}
   \sum_{l=1}^{\infty}l\left(\frac{T}{J}\right)^{l}\frac{I_{l}(4Jt)}{t}
 \end{align}
-
+\pagebreak
 \subsection{Discrete Laplacians}
 Using the Circular Diagonalization Theorem~\cite{} one can derive the
 eigenvalues $\lambda_N(k)$ of an $N\times N$ matrix $\mathbf X$ which
@@ -201,19 +204,19 @@ and thus its eigenvalues is simply the sum one dimensional dispersions~\cite{}.
   -2\sum_{x\in\bar{\mathbf{x}}}\left(\cos x+1\right)
   \quad \bar{\mathbf{x}}\in[-\pi,\pi]^M
 \end{align}
-The probability density $\rho_M(\lambda)$ can be expressed as an integral
+The probability density $\Delta_M(\lambda)$ can be expressed as an integral
 over the $M$-dimensional hypercube region $\Omega=[-\pi,\pi]^M$ in complete
 analogue with the density of states.
-\begin{align*}
-  \rho_M(\lambda')&=\frac{1}{Z_M}\int_{\Omega}\!\delta(\lambda'-\lambda(\bar{\mathbf{x}}))\,\mathrm{d}\bar{\mathbf{x}}
-\end{align*}
+\begin{align}
+  \Delta_M(\lambda')&=\frac{1}{Z_M}\int_{\Omega}\!\delta(\lambda'-\lambda(\bar{\mathbf{x}}))\,\mathrm{d}\bar{\mathbf{x}}
+\end{align}
 We proceed with an element-wise change of variables $\bar{\mathbf{u}}=2\cos \bar{\mathbf{x}}$ and
 recognise that the integration region is $M$-fold symmetric across each
 component axis, which allows restriction of the domain of integration to a
 hyperoctant. Given coordinates $\bar{\mathbf{u}}$ the region becomes $\Omega'=[-2,2]^M$.
 
 \begin{align*}
-  \rho_M(\lambda)&=\frac{1}{Z_M}
+  \Delta_M(\lambda)&=\frac{1}{Z_M}
   \int_{\Omega'}\!
   \frac{\delta(\Lambda_M+\sum_{u\in\bar{\mathbf{u}}}u)}
   {\sqrt{\prod_{u\in\bar{\mathbf{u}}}(1-u^2/4) }}
@@ -249,7 +252,7 @@ distribution $\alpha(\lambda)$. It becomes clear that the eigenvalue
 density of a kronecker sum of matrices is the convolution of the densities
 of those matrices.
 \begin{align}
-  \rho_M(\lambda)=\underbrace{
+  \Delta_M(\lambda)=\underbrace{
   \alpha(\lambda)*\alpha(\lambda)*\cdots*\alpha(\lambda)}_{M}\qquad\qquad\qquad\\
   \begin{matrix}
     \alpha(\lambda)=
@@ -267,7 +270,7 @@ of those matrices.
 \centering{}
 \captionsetup{justification=centering}
 \includegraphics[scale=0.45]{figures/density}
-\caption{Eigenvalue distributions $\rho_M(\lambda)$ of the $M$-dimensional Laplacian}
+\caption{Eigenvalue distributions $\Delta_M(\lambda)$ of the $M$-dimensional Laplacian}
 \label{fig:dos}
 \end{figure}
 \noindent
@@ -289,6 +292,30 @@ performed immediately.
   \Gamma(t)=2Te^{-4t}
   \sum_{k=0}^{\infty}\frac{(2Tt)^{k-1}}{(k-1)!}
   {}_0F_1(\frac{1+k}{2},4t^2)
+\end{align}
+\subsection{Sum of the Wigner and Laplacian Matrices}
+In the formalism of Free Probability it is possible to express the $N\rightarrow$
+limiting eigenvalue density $\rho$ of a sum of matrices in terms of the free
+convolutions $\box$ the individual limiting densities, provided that
+these densities have compact support~\cite{,}. The following expressions for
+the free convolution of a semicircle distrubtion $\cap(\lambda|J)$ with an
+arbitrary compact distrubtion $\mu(\lambda)$ can be used when one of
+these matrices comes from a Wigner Ensemble~\cite{}.
+\begin{align}
+  \mathcal{H}[\rho\circ\psi(\lambda|J)]=
+  \int_{\mathbb{R}}\frac{(\lambda-\lambda')\mu(\lambda')\mathrm{d}\lambda'}{(\lambda-\lambda')^2+E(\lambda|J)^2}
+  \qquad
+  \psi(\lambda|J)=
+  \lambda+J\mathcal{H}[\rho\circ\psi(\lambda|J)]
+\end{align}
+\vspace{-30}
+\begin{align}
+  E(\lambda|J)=\inf
+  \left\{
+  E\geq 0\,\,\bigg|\,
+  \int_{\mathbb{R}}\frac{\mu(\lambda')\mathrm{d}\lambda'}{(\lambda-\lambda')^2+E^2}
+  \leq\frac{1}{J}
+  \right\}
 \end{align}
 \begin{figure}[H]
 \centering{}
