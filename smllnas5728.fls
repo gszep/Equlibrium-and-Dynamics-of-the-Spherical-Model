@@ -246,6 +246,9 @@ INPUT /home/gszep/Documents/articles/spherical-model/figures/interaction1d.png
 INPUT /home/gszep/Documents/articles/spherical-model/figures/interaction2d.png
 INPUT /home/gszep/Documents/articles/spherical-model/figures/interaction2d.png
 INPUT /home/gszep/Documents/articles/spherical-model/figures/interaction2d.png
+INPUT /home/gszep/Documents/articles/spherical-model/smllnas5728.bbl
+INPUT /home/gszep/Documents/articles/spherical-model/smllnas5728.bbl
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /home/gszep/Documents/articles/spherical-model/smllnas5728.aux
 INPUT /home/gszep/Documents/articles/spherical-model/smllnas5728.out
 INPUT /home/gszep/Documents/articles/spherical-model/smllnas5728.out
@@ -267,4 +270,5 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
