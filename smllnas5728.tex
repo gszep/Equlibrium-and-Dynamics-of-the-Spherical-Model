@@ -1,6 +1,7 @@
 \documentclass{article}[12pt]
 \renewcommand{\baselinestretch}{1.5}
 
+\usepackage[parfill]{parskip}
 \usepackage[affil-it]{authblk}
 \usepackage[space]{grffile}
 
@@ -33,10 +34,7 @@
 \providecommand\citep{\cite}
 \providecommand\citealt{\cite}
 
-\DeclareMathOperator*{\E}{\mathbb{E}}
-\DeclareMathOperator*{\V}{\mathbb{V}}
-
-
+\setlength{\parskip}{1em}
 \makeatletter
 \makeatother
 
@@ -56,7 +54,8 @@ dynamics of the Spherical Model
 \date{\today}
 \maketitle
 
-\section{Intorduction and Motivation}
+\section{Mathematical Analysis}
+\vspace{-10pt}
 \subsection{Motivation for the Model}
 Consider $N$ nodes in a undirected network passing around a finite resource.
 Eventually the resource will equilibrate within the network solely due it its
@@ -64,20 +63,21 @@ finiteness. We wish to study the equilibration timescales of such a problem,
 where finiteness of the resource and connectedness of the network may be
 expressed is a variety of ways, giving rise different flavours of the
 Sherrington-Kirkpatrick spherical model.
-\\\\
+
 Exact dynamical solutions can be obtained if finiteness of the resource
 is the expressed as a constant $L_2$ norm across all the nodes. In addition,
 if the connectedness of the network is known, it may be used to obtain explicit
 expressions --- at least in some limit --- for the dynamics of the resource,
 and hence timescales can be extracted.
-\\\\
+
 The Wigner ensemble is used to generate the connectivity in an attempt to
 minimise a priori assumptions on it. Then intorducing the $M$-dimensional
 periodic lattice laplacian allows the study of the model as it departs from
-randomness and gains spatial structure. Is possible to extract the dimension
+randomness and gains spatial structure. Is it possible to extract the dimension
 of the manifold that the nodes lie on simply from observed correlations and
 equilibration timescales in the resource? This work may have applications in
 dimensionality reduction methods.
+
 \subsection{Analytical Solution of the Langevin Equation}
 Let the resource across $N$ nodes be represented by vector $s(t)\in\mathbb{R}^N$,
 and the weighted undirected connections between them be a Hermitian $N\times N$ matrix
@@ -85,23 +85,22 @@ $\mathbf{J}$. This matrix represents the rate at which the resource is passed be
 nodes. Without finiteness, we can solve the linear equations, revealing that
 the resource at different nodes would diverge or go to zero depending on the sign
 of the eigenvalues of $\mathbf{J}$. This does not seem reasonable.
-\\\\
-Therefore a
-lagrange multiplier $\mu(t)\in\mathbb{R}$ is introduced which holds the $L_2$
-norm of vector $s(t)$ constant. This implicitly introduces a nonlinearity. The
-dynamics is cast as a Langevin Equation with white noise $\xi(t)\in\mathbb{R}^N$
+
+Therefore a lagrange multiplier $\mu(t)\in\mathbb{R}$ is introduced which holds
+the $L_2$ norm of vector $s(t)$ constant. This implicitly introduces a nonlinearity.
+The dynamics is cast as a Langevin Equation with white noise $\xi(t)\in\mathbb{R}^N$
 which is characterised by its moments $\langle\dots\rangle$. Eventually the resource
 will equilibrate due it its finiteness, subject to the amplitude of the noise.
 The symbol $\mathbb{1}$ represents the diagonal identity.
 \begin{align}
   \partial_t s = \big[\mathbf{J}-\mathbb{1}\mu(t)\big]s+\xi
 \end{align}
-\vspace{-40}
+\vspace{-40pt}
 \begin{align}
   \left\langle\xi(t)\right\rangle=\mathbb{0}\qquad
   \left\langle\xi(t)\xi(t')\right\rangle=2T\mathbb{1}\delta(t-t')
 \end{align}
-\vspace{-40}
+\vspace{-40pt}
 \begin{align}
 \text{where}\quad\mu(t) = \frac{1}{N}s^{\top}\left(\mathbf{J}s+\xi\right)
 \quad\text{enforces constraint}\quad|s(t)|^2=N
@@ -120,7 +119,7 @@ eigenvalue distribution $p(\lambda\in\mathbf{J})$.
     \frac{\mathbb{e}^{\lambda t}}{\sqrt{\Gamma(t)}}\qquad
   \langle \sigma_{\lambda}(t)\sigma_{\lambda'}(t')\rangle=
 \end{align}
-\vspace{-30}
+\vspace{-30pt}
 \begin{align}
   \Gamma(t)=
     \sum_{k=0}^{\infty}(2T)^k
@@ -134,17 +133,17 @@ eigenvalue distribution $p(\lambda\in\mathbf{J})$.
 Suppose the connections between nodes are given by a random matrix
 $\mathbf{H}$ taken from the Hermitian Wigner ensemble, whos upper triangle elements
 $[\mathbf{H}]_{ij}$ are distributed according to a density $\mathbb{P}$ with
-subexponential tails~\cite{} with expectation $\E$ and variance
-$\V$, such that in the limit $N\rightarrow\infty$ the eigenvalue
+subexponential tails~\cite{} with expectation $\mathbb{E}$ and variance
+$\mathbb{V}$, such that in the limit $N\rightarrow\infty$ the eigenvalue
 spectrum converges to the semicircle law $p(\lambda\in\mathbf{H})\rightarrow\cap(\lambda|J)$.
 Below the symbols $\mathbf{0}$ and $\mathbf{1}$ denote constant matrices of zeros and ones
 respectively.
 \begin{align}
 \cap(\lambda|J)=\frac{1}{2\pi J^2}\sqrt{4J^2-\lambda^2}\label{eq:semicircle}
 \quad\quad\\
-\E[\mathbf{H}]=\mathbf{0}
+\mathbb{E}[\mathbf{H}]=\mathbf{0}
 \quad
-\V[\mathbf{H}]=\frac{J^2}{N}(\mathbf{1}+\mathbb{1})
+\mathbb{V}[\mathbf{H}]=\frac{J^2}{N}(\mathbf{1}+\mathbb{1})
 \quad\\
 \mathbb{P}\left(
 t^\alpha\leq
@@ -213,7 +212,7 @@ analogue with the density of states.
 We proceed with an element-wise change of variables $\bar{\mathbf{u}}=2\cos \bar{\mathbf{x}}$ and
 recognise that the integration region is $M$-fold symmetric across each
 component axis, which allows restriction of the domain of integration to a
-hyperoctant. Given coordinates $\bar{\mathbf{u}}$ the region becomes $\Omega'=[-2,2]^M$.
+hyperoctant. In coordinates $\bar{\mathbf{u}}$ the region becomes $\Omega'=[-2,2]^M$.
 
 \begin{align*}
   \Delta_M(\lambda)&=\frac{1}{Z_M}
@@ -265,6 +264,7 @@ of those matrices.
         0 & |x|\geq1\\
       \end{cases}
   \end{matrix}
+  \label{eq:arcsine}
 \end{align}
 \begin{figure}[H]
 \centering{}
@@ -273,7 +273,6 @@ of those matrices.
 \caption{Eigenvalue distributions $\Delta_M(\lambda)$ of the $M$-dimensional Laplacian}
 \label{fig:dos}
 \end{figure}
-\noindent
 The one dimensional density has two Van Hove singularities at $\lambda=-4,0$
 given by the arcsine law $\alpha(\lambda)$, whereas the two dimensional
 case has one at $\lambda=-4$ given by the complete elliptic integral
@@ -282,8 +281,8 @@ dimensions singularities do not occur; instead there appear to be
 discontinuities in the higher order derivatives. The density smooths out
 as repeated convolutions bring it to a normal distrubtion; this is another
 way to state the Central Limit Theorem~\cite{}.
-\\\\
-Substituting the limiting density~(\ref{eq:}) into the second equation
+
+Substituting the limiting density~(\ref{eq:arcsine}) into the second equation
 in~(\ref{eq:gamma}) the inverse laplace transform of the powers can be
 performed immediately.
 \begin{align}
@@ -294,13 +293,13 @@ performed immediately.
   {}_0F_1(\frac{1+k}{2},4t^2)
 \end{align}
 \subsection{Sum of the Wigner and Laplacian Matrices}
-In the formalism of Free Probability it is possible to express the $N\rightarrow$
-limiting eigenvalue density $\rho$ of a sum of matrices in terms of the free
-convolutions $\box$ the individual limiting densities, provided that
-these densities have compact support~\cite{,}. The following expressions for
-the free convolution of a semicircle distrubtion $\cap(\lambda|J)$ with an
-arbitrary compact distrubtion $\mu(\lambda)$ can be used when one of
-these matrices comes from a Wigner Ensemble~\cite{}.
+In the formalism of Free Probability it is possible to express the
+$N\rightarrow\infty$ limiting eigenvalue density $\rho$ of a sum of
+matrices in terms of the free convolutions $[]$ the individual limiting
+densities, provided that these densities have compact support~\cite{}.
+The following expressions for the free convolution of a semicircle distrubtion
+$\cap(\lambda|J)$ with an arbitrary compact distrubtion $\mu(\lambda)$ can be
+used when one of these matrices comes from a Wigner Ensemble~\cite{}.
 \begin{align}
   \mathcal{H}[\rho\circ\psi(\lambda|J)]=
   \int_{\mathbb{R}}\frac{(\lambda-\lambda')\mu(\lambda')\mathrm{d}\lambda'}{(\lambda-\lambda')^2+E(\lambda|J)^2}
@@ -308,7 +307,7 @@ these matrices comes from a Wigner Ensemble~\cite{}.
   \psi(\lambda|J)=
   \lambda+J\mathcal{H}[\rho\circ\psi(\lambda|J)]
 \end{align}
-\vspace{-30}
+\vspace{-30pt}
 \begin{align}
   E(\lambda|J)=\inf
   \left\{

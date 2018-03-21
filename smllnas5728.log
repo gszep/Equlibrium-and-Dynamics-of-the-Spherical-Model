@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.22)  21 MAR 2018 13:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.22)  21 MAR 2018 22:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -23,6 +23,8 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
+) (/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2001/04/09 non-zero parskip adjustments
 ) (/usr/share/texlive/texmf-dist/tex/latex/preprint/authblk.sty
 Package: authblk 2001/02/27 1.3 (PWD)
 \affilsep=\skip43
@@ -66,10 +68,10 @@ Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 ) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+) (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 95.
@@ -433,10 +435,10 @@ Now handling font encoding U ...
    defining Unicode char U+2423 (decimal 9251)
 )) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2016/02/24 3.9q The Babel package
- (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
-Language: english 2012/08/20 v3.3p English support from the babel system
 
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2012/08/20 v3.3p English support from the babel system
+ (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2016/02/24 3.9q Babel common definitions
 \babel@savecnt=\count96
 \U@D=\dimen120
@@ -1180,31 +1182,31 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count267
 )
-Package hyperref Info: Option `colorlinks' set `false' on input line 25.
+Package hyperref Info: Option `colorlinks' set `false' on input line 26.
 \@float@every@figure=\toks29
  (/home/gszep/Documents/articles/spherical-model/smllnas5728.aux)
 \openout1 = `smllnas5728.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 47.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 45.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
  (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count268
@@ -1229,7 +1231,7 @@ Package grfext Info: Graphics extension search list:
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package grffile Info: \Gin@ii of package `graphicx' fixed on input line 47.
+Package grffile Info: \Gin@ii of package `graphicx' fixed on input line 45.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1279,7 +1281,7 @@ Dictionary: translator-basic-dictionary, Language: English
 File: siunitx-abbreviations.cfg 2016/03/01 v2.6q siunitx: Abbreviated units
 )
 \AtBeginShipoutBox=\box58
-Package hyperref Info: Link coloring OFF on input line 47.
+Package hyperref Info: Link coloring OFF on input line 45.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -1287,163 +1289,71 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count274
 )
-LaTeX Info: Redefining \ref on input line 47.
-LaTeX Info: Redefining \pageref on input line 47.
-LaTeX Info: Redefining \nameref on input line 47.
+LaTeX Info: Redefining \ref on input line 45.
+LaTeX Info: Redefining \pageref on input line 45.
+LaTeX Info: Redefining \nameref on input line 45.
  (/home/gszep/Documents/articles/spherical-model/smllnas5728.out) (/home/gszep/Documents/articles/spherical-model/smllnas5728.out)
 \@outlinefile=\write3
 \openout3 = `smllnas5728.out'.
 
 \c__siunitx_mathsf_int=\count275
-LaTeX Font Info:    Try loading font information for U+lasy on input line 47.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 45.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 47.
+LaTeX Font Info:    Try loading font information for U+msa on input line 45.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 47.
+LaTeX Font Info:    Try loading font information for U+msb on input line 45.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+bbold on input line 47.
+LaTeX Font Info:    Try loading font information for U+bbold on input line 45.
  (/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd)
 \c__siunitx_mathtt_int=\count276
+ [1
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--81
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 61--81
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 82--96
-
- []
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-/home/gszep/Documents/articles/spherical-model/smllnas5728.tex:99: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \vskip 
-l.99 \vspace{-40}
-                 
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-/home/gszep/Documents/articles/spherical-model/smllnas5728.tex:104: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \vskip 
-l.104 \vspace{-40}
-                  
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-/home/gszep/Documents/articles/spherical-model/smllnas5728.tex:123: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \vskip 
-l.123 \vspace{-30}
-                  
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-[2] [3] [4] <figures/density.png, id=78, 634.37pt x 398.48875pt>
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] <figures/density.png, id=78, 634.37pt x 398.48875pt>
 File: figures/density.png Graphic file (type png)
  <use figures/density.png>
 Package pdftex.def Info: figures/density.png used on input line 272.
 (pdftex.def)             Requested size: 285.46385pt x 179.31828pt.
-
-
-LaTeX Warning: Reference `eq:' on page 5 undefined on input line 286.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 276--289
-
- []
-
-[5 </home/gszep/Documents/articles/spherical-model/figures/density.png>]
-/home/gszep/Documents/articles/spherical-model/smllnas5728.tex:299: Missing number, treated as zero.
-<to be read again> 
-                   $
-l.299 convolutions $\box$
-                          the individual limiting densities, provided that
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-LaTeX Warning: Citation `' on page 6 undefined on input line 300.
-
-
-LaTeX Warning: Citation `' on page 6 undefined on input line 300.
-
-/home/gszep/Documents/articles/spherical-model/smllnas5728.tex:311: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \vskip 
-l.311 \vspace{-30}
-                  
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-<figures/interaction1d.png, id=93, 627.34375pt x 608.2725pt>
+ [5 </home/gszep/Documents/articles/spherical-model/figures/density.png>]
+<figures/interaction1d.png, id=94, 627.34375pt x 608.2725pt>
 File: figures/interaction1d.png Graphic file (type png)
  <use figures/interaction1d.png>
-Package pdftex.def Info: figures/interaction1d.png used on input line 323.
+Package pdftex.def Info: figures/interaction1d.png used on input line 322.
 (pdftex.def)             Requested size: 188.20457pt x 182.48315pt.
- <figures/interaction2d.png, id=94, 627.34375pt x 608.2725pt>
+ <figures/interaction2d.png, id=95, 627.34375pt x 608.2725pt>
 File: figures/interaction2d.png Graphic file (type png)
  <use figures/interaction2d.png>
-Package pdftex.def Info: figures/interaction2d.png used on input line 324.
+Package pdftex.def Info: figures/interaction2d.png used on input line 323.
 (pdftex.def)             Requested size: 188.20457pt x 182.48315pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 329.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 328.
  [6] [7 </home/gszep/Documents/articles/spherical-model/figures/interaction1d.png> </home/gszep/Documents/articles/spherical-model/figures/interaction2d.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 329.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 328.
  (/home/gszep/Documents/articles/spherical-model/smllnas5728.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 329.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 329.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 328.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 328.
 Package rerunfilecheck Info: File `smllnas5728.out' has not changed.
-(rerunfilecheck)             Checksum: DC332317D5A9743ADC4B81BD4C960F7D;459.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 329.
+(rerunfilecheck)             Checksum: 2DA55EF696BAC1E29FDCDC1796B4B613;453.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 328.
  ) 
 Here is how much of TeX's memory you used:
- 19882 strings out of 493029
- 368177 string characters out of 6136234
- 428236 words of memory out of 5000000
- 23137 multiletter control sequences out of 15000+600000
+ 19886 strings out of 493029
+ 368400 string characters out of 6136234
+ 428308 words of memory out of 5000000
+ 23138 multiletter control sequences out of 15000+600000
  10410 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,18n,42p,10362b,748s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,18n,42p,10362b,740s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on /home/gszep/Documents/articles/spherical-model/smllnas5728.pdf (7 pages, 431685 bytes).
+Output written on /home/gszep/Documents/articles/spherical-model/smllnas5728.pdf (7 pages, 430917 bytes).
 PDF statistics:
- 180 PDF objects out of 1000 (max. 8388607)
- 144 compressed objects within 2 object streams
+ 181 PDF objects out of 1000 (max. 8388607)
+ 145 compressed objects within 2 object streams
  35 named destinations out of 1000 (max. 500000)
  64 words of extra memory for PDF output out of 10000 (max. 10000000)
 
