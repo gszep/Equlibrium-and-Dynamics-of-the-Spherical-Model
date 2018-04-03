@@ -138,20 +138,46 @@ $\mathbb{V}$, such that in the limit $N\rightarrow\infty$ the eigenvalue
 spectrum converges to the semicircle law $p(\lambda\in\mathbf{H})\rightarrow\cap(\lambda|J)$.
 Below the symbols $\mathbf{0}$ and $\mathbf{1}$ denote constant matrices of zeros and ones
 respectively.
+\begin{figure}[H]
+\centering{}
+\captionsetup{justification=centering}
+\includegraphics[scale=0.4]{figures/semicircle}
+\caption{Empirical histogram of wigner ensemble eigenvalues and analytical semicircle
+distribution $\cap(\lambda|J)$, demonstrating the corresponance of the law in the
+$N\rightarrow\infty$ limit}
+\label{fig:semicircle}
+\end{figure}
+\vspace{-45pt}
 \begin{align}
-\cap(\lambda|J)=\frac{1}{2\pi J^2}\sqrt{4J^2-\lambda^2}\label{eq:semicircle}
-\quad\quad\\
+\cap(\lambda|J)=\frac{\Pi(\lambda/2J)}{2\pi J^2}\sqrt{4J^2-\lambda^2}\label{eq:semicircle}
+\quad\quad
+    \Pi(x)=
+      \begin{cases}
+        1 & |x|<1\\
+        0 & |x|\geq1\\
+      \end{cases}\\
 \mathbb{E}[\mathbf{H}]=\mathbf{0}
 \quad
 \mathbb{V}[\mathbf{H}]=\frac{J^2}{N}(\mathbf{1}+\mathbb{1})
-\quad\\
+\quad\qquad\qquad\\
 \mathbb{P}\left(
 t^\alpha\leq
 \left|[\mathbf{H}]_{ij}\right|
 \right)\leq e^{-t}
 \quad
 \forall t\geq\alpha,\forall i,j
+\quad\qquad\quad
 \end{align}
+The Heaviside Pi function $\Pi(x)$ bounds the distirbution. Note
+the requirement on the distribution of the elements $[\mathbf{H}]_{ij}$
+is quite general and allows for the choice of a sparse random matrix. This is
+useful when optimising the numerical integration of the equations of motion; in
+particular sparse memory access allows for efficient implementation on graphics
+processing units~\cite{}.
+
+If the spherical model has completely random interations the semicircle
+distribution \eqref{eq:semicircle} can be integrated
+
 To match the terms of the expansion in~(\ref{eq:gamma}) to known inverse laplace
 transforms some algebraic trickery is required: after substituting the limiting
 density~(\ref{eq:semicircle}) into the second equation in~(\ref{eq:gamma}) the
@@ -159,6 +185,7 @@ infinite sum is evaluated first. Then the result is expanded in terms the denomi
 part that is a function of $s$. Only then do the terms match the laplace transforms
 of modified Bessel functions of the first kind $\frac{I_{l}(4Jt)}{t}$.
 These have well-known asymtotics for $z\rightarrow\infty$
+
 \begin{align}
   \Phi(s)=\frac{s-\sqrt{s^2-16J^2}}{8J^2}\qquad
   \Gamma(t)=\frac{1}{2T}
@@ -252,24 +279,20 @@ density of a kronecker sum of matrices is the convolution of the densities
 of those matrices.
 \begin{align}
   \Delta_M(\lambda)=\underbrace{
-  \alpha(\lambda)*\alpha(\lambda)*\cdots*\alpha(\lambda)}_{M}\qquad\qquad\qquad\\
-  \begin{matrix}
+  \alpha(\lambda)*\alpha(\lambda)*\cdots*\alpha(\lambda)}_{M}\qquad\qquad\label{eq:mlap}\\
     \alpha(\lambda)=
-      \frac{1}{2\pi\sqrt{1-\left(\frac{\lambda+2}{2}\right)^2}}
-      \Pi\left(\frac{\lambda+2}{2}\right)
-    &&
+      \frac{\Pi\left(\frac{\lambda+2}{2}\right)}{2\pi\sqrt{1-\left(\frac{\lambda+2}{2}\right)^2}}
+    \qquad
     \Pi(x)=
       \begin{cases}
         1 & |x|<1\\
         0 & |x|\geq1\\
       \end{cases}
-  \end{matrix}
-  \label{eq:arcsine}
 \end{align}
 \begin{figure}[H]
 \centering{}
 \captionsetup{justification=centering}
-\includegraphics[scale=0.45]{figures/density}
+\includegraphics[scale=0.4]{figures/density}
 \caption{Eigenvalue distributions $\Delta_M(\lambda)$ of the $M$-dimensional Laplacian}
 \label{fig:dos}
 \end{figure}
@@ -282,7 +305,15 @@ discontinuities in the higher order derivatives. The density smooths out
 as repeated convolutions bring it to a normal distrubtion; this is another
 way to state the Central Limit Theorem~\cite{}.
 
-Substituting the limiting density~(\ref{eq:arcsine}) into the second equation
+In the context of an equation of motion, the laplacian often is scaled by
+a diagonal matrix, which may represent anisotropic diffusion. To take this
+scaling into account the parameter $D$ is introduced in the arcsine law.
+\begin{align}
+  \alpha(\lambda|D)=
+    \frac{\Pi\left(\frac{\lambda/D+2}{2}\right)}{2\pi D\sqrt{1-\left(\frac{\lambda/D+2}{2}\right)^2}}
+  \label{eq:arcsine}
+\end{align}
+Substituting this limiting density~(\ref{eq:arcsine}) into the second equation
 in~(\ref{eq:gamma}) the inverse laplace transform of the powers can be
 performed immediately.
 \begin{align}
@@ -292,29 +323,58 @@ performed immediately.
   \sum_{k=0}^{\infty}\frac{(2Tt)^{k-1}}{(k-1)!}
   {}_0F_1(\frac{1+k}{2},4t^2)
 \end{align}
+\pagebreak
 \subsection{Sum of the Wigner and Laplacian Matrices}
 In the formalism of Free Probability it is possible to express the
 $N\rightarrow\infty$ limiting eigenvalue density $\rho$ of a sum of
-matrices in terms of the free convolutions $[]$ the individual limiting
-densities, provided that these densities have compact support~\cite{}.
-The following expressions for the free convolution of a semicircle distrubtion
-$\cap(\lambda|J)$ with an arbitrary compact distrubtion $\mu(\lambda)$ can be
-used when one of these matrices comes from a Wigner Ensemble~\cite{Biane_1997}.
+matrices as the free convolution $\boxplus$ the individual limiting
+densities $\cap(\lambda|J)$ and $\mu(\lambda)$ provided that these
+densities have compact support~\cite{Novak2012}.
 \begin{align}
-  \mathcal{H}[\rho\circ\psi(\lambda|J)]=
-  \int_{\mathbb{R}}\frac{(\lambda-\lambda')\mu(\lambda')\mathrm{d}\lambda'}{(\lambda-\lambda')^2+E(\lambda|J)^2}
-  \qquad
-  \psi(\lambda|J)=
-  \lambda+J\mathcal{H}[\rho\circ\psi(\lambda|J)]
+  \rho(\lambda|J)=\cap(\lambda|J)\boxplus\mu(\lambda)
+  \label{eq:freeconv}
 \end{align}
-\vspace{-30pt}
+Unfortunately the general definition of this operation is rather implicit.
+The expression can be unpacked in terms of an infinum~\cite{Biane_1997}
+for the specific case of free convolution of semicircle distrubtion
+$\cap(\lambda|J)$ with an arbitrary compact distrubtion $\mu(\lambda)$.
+Letting this distribution be that of the $M$-dimensional laplacian
+\eqref{eq:mlap} and assuming isotropic diffusion $D$ in each direction,
+the following expression can be obtained:
 \begin{align}
-  E(\lambda|J)=\inf
+  \rho(\lambda|J,D)=
+  \frac{1}{\pi J^2}
+  \inf_{\rho\in[0,\infty)}
   \left\{
-  E\geq 0\,\,\bigg|\,
-  \int_{\mathbb{R}}\frac{\mu(\lambda')\mathrm{d}\lambda'}{(\lambda-\lambda')^2+E^2}
-  \leq\frac{1}{J}
+  1-J^2\int_{\mathbb{R}}\frac{\overbrace{
+  \alpha*\alpha*\cdots*\alpha(\lambda')}^{M}\mathrm{d}\lambda'}{(\lambda-D\lambda')^2+\rho^2}
+  \geq0
   \right\}
+  \label{eq:inf}
+\end{align}
+\begin{figure}[H]
+\centering{}
+\captionsetup{justification=centering}
+\includegraphics[scale=0.3]{figures/1dinf}
+\includegraphics[scale=0.3]{figures/2dinf}
+\caption{Left/Right: Numerical evaluation of the integral within the infinum
+$\rho(\lambda|J,D)$ for the one/two dimensional laplacian. The
+infinum picks out one of the contours shown in black
+for given values of $J,D=1$}
+\label{fig:inf}
+\end{figure}
+For the $M=1$ the integral within the infinum can be evaluated and
+one obtains a transcendental equation for $\rho(\lambda|J,D)$
+in terms of the imaginary part $\Im$ of a complex valued function where
+$z=\lambda+\mathbb{i}\rho$; parameters $J,D$ set the strength of
+nonlocal and local interactions respectively.
+
+\begin{align}
+  \int_{-4}^{\,0}\frac{\alpha(\lambda')\mathrm{d}\lambda'}{(\lambda-D\lambda')^2+\rho^2}=
+    -\frac{1}{\rho}
+        \Im\left[
+          \frac{1}{\sqrt{z}\sqrt{z+4D}}
+        \right]_{z=\lambda+\mathbb{i}\rho}
 \end{align}
 \begin{figure}[H]
 \centering{}
