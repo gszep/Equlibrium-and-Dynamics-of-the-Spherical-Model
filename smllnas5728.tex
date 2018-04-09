@@ -78,7 +78,7 @@ of the manifold that the nodes lie on simply from observed correlations and
 equilibration timescales in the resource? This work may have applications in
 dimensionality reduction methods.
 
-\subsection{Analytical Solution of the Langevin Equation}
+\subsection{Spherical Sherrington-Kirkpatrick Model}
 Let the resource across $N$ nodes be represented by vector $s(t)\in\mathbb{R}^N$,
 and the weighted undirected connections between them be a Hermitian $N\times N$ matrix
 $\mathbf{J}$. This matrix represents the rate at which the resource is passed between
@@ -103,30 +103,95 @@ The symbol $\mathbb{1}$ represents the diagonal identity.
 \vspace{-40pt}
 \begin{align}
 \text{where}\quad\mu(t) = \frac{1}{N}s^{\top}\left(\mathbf{J}s+\xi\right)
-\quad\text{enforces constraint}\quad|s(t)|^2=N
+\quad\text{enforces constraint}\quad s^\top\! s=N
 \label{eq:constraint}
 \end{align}
+\subsubsection{Dynamical Properties}
 It is possible to solve the inhomogenous time-dependent ordinary linear system of
 differential equations for $s(t)$ using integrating factor method and rotate
 into the eigenbasis $\sigma_{\lambda}(t)\in\mathbb{R}$ of matrix $\mathbf{J}$. This does not
-yield a closed form for $\mu(t)$ however; the derivation by Cugliandolo, L. F.
-and Dean D. S.~\cite{} yields the moments below for the uniform
+yield a closed form for $\mu(t)$ however. Following the derivation by Cugliandolo, L. F.
+and Dean D. S.~\cite{} yields the moments explicitly for the uniform
 initial condition $\sigma_{\lambda}(0)=1$. Here the complexity lies in performing
 the inverse laplace transform $\mathcal{L}^{-1}$ which in turn depends on the
 eigenvalue distribution $p(\lambda\in\mathbf{J})$.
 \begin{align}
+  \begin{matrix}
   \langle \sigma_{\lambda}(t)\rangle=
-    \frac{\mathbb{e}^{\lambda t}}{\sqrt{\Gamma(t)}}\qquad
-  \langle \sigma_{\lambda}(t)\sigma_{\lambda'}(t')\rangle=
+    \frac{\mathbb{e}^{\lambda t}}{\sqrt{\Gamma(t)}}
+    &&\qquad
+  \begin{matrix}
+  \langle s(t)^{\top}\!\!s(t')\rangle=
+  \frac{N}{\sqrt{\Gamma(t)\Gamma(t')}}
+  \bigg(
+  \int_{\mathbb{R}} p(\lambda\in\mathbf{J})\mathbb{e}^{\lambda(t+t')}\mathrm{d}\lambda
+  \\+2T
+  \int_{\mathbb{R}}p(\lambda\in\mathbf{J})\int_{0}^{\min(t,t')}\!
+  \Gamma(\tau)\mathbb{e}^{\lambda(t+t'-2\tau)}
+  \mathrm{d}\tau\mathrm{d}\lambda
+  \bigg)
+  \end{matrix}
+  \label{eq:moments}
+  \end{matrix}
 \end{align}
-\vspace{-30pt}
+\vspace{-20pt}
 \begin{align}
   \Gamma(t)=
     \sum_{k=0}^{\infty}(2T)^k
     \mathcal{L}^{-1}\left[\Phi(s)^k\right]\quad\text{where}
     \quad
-    \Phi(s)=\int\frac{p(\lambda\in\mathbf{J})}{s-2\lambda}\mathrm{d}\lambda
+    \Phi(s)=\int_{\mathbb{R}}\frac{p(\lambda\in\mathbf{J})}{s-2\lambda}\mathrm{d}\lambda
     \label{eq:gamma}
+\end{align}
+\subsubsection{Equilibrium Properties}
+If the Langevin dynamics can be written as the gradient of some potential $V(s)$
+then the steady state is distrubted according to a Gibbs measure of inverse
+temperature $\beta$ with partition function $Z_N(\beta)$.
+Indeed it is possible to write down $V(s)$ without the constraint enforced by
+$\mu(t)$; instead it is included via a static lagrange multiplier $\mu$ with
+an average self-consistency condition.
+\begin{align}
+  Z_N(\beta)=\int_{\mathbb{R}^N}\!\mathbb{e}^{-\beta V(s)-\mu\,s^{\top}\!s}\,\mathrm{d}s
+  \qquad\text{where}\quad
+  \left\langle s^\top\!s\right\rangle=-\partial_\mu\ln Z_N(\beta)
+  \qquad
+  V(s)=-\frac{1}{2}s^{\top}\mathbf{J}s
+\end{align}
+Rotating into the eigenbasis $\sigma_\lambda$ leaves the integral invariant and
+allows factorisation
+\begin{align}
+  Z_N(\beta)
+  &= \prod_{\lambda\in\mathbf{J}}
+    \int_{\mathbb{R}}
+      \mathbb{e}^{-(\mu-\frac{\lambda\beta}{2})\sigma_\lambda^2}
+    \,\mathrm{d}\sigma_\lambda \\
+  &= \mathbb{e}^{-\frac{1}{2}\sum_{\lambda\in\mathbf{J}}\ln\left(\frac{\mu-\lambda\beta/2}{\pi}\right)}
+  \qquad\mu>\frac{\Lambda\beta}{2}
+  \quad\text{where}\quad
+  \Lambda=\max_{\lambda\in\mathbf{J}}\{\lambda\}
+\end{align}
+The average self-consistency condition $\left\langle s^\top\!s\right\rangle=N$ for
+solves for $\mu$ with an integral over the density $p(\lambda\in\mathbf{J})$.
+For high temperatures $\beta\searrow 0$ the singularity in the integrand
+$\lambda^*\nearrow\infty$ moves out of the bounds of support of
+$p(\lambda\in\mathbf{J})$, which suggests that the occupation of modes $\lambda$
+at equilibrium is given only by the eigenvalue distirbution. As the temperature
+approaches $\beta\nearrow 2\mu/\Lambda$ the singularity reaches the upper
+bound of the density $\lambda^*\searrow\Lambda$. At this critical value the
+singularity weights the mode $\lambda^*$ macroscopically. This phase transition
+has the flavour of Bose condensation.
+\begin{align}
+  \left\langle s^\top\!s\right\rangle
+  =\frac{N}{\beta}\int_{\mathbb{R}}\frac{p(\lambda\in\mathbf{J})}{\frac{2\mu}{\beta}-\lambda}\,\mathrm{d}\lambda
+\end{align}
+From this it is possible to determine the occupation at any given mode $\lambda$
+which is the same as the moment $\langle \sigma_{\lambda}(t)\rangle$ in the
+infinite time limit.
+\begin{align}
+  \lim_{t\rightarrow\infty}\langle \sigma_{\lambda}(t)\rangle
+  =N^{1/2}\sqrt{1-\frac{1}{\beta}\int_{\mathbb{R}}
+  \frac{p(\lambda'\in\mathbf{J})}{\lambda-\lambda'}\,\mathrm{d}\lambda'}
+  \label{eq:equilibrium}
 \end{align}
 \pagebreak
 \subsection{Hermitian Wigner Ensemble}
@@ -176,22 +241,58 @@ particular sparse memory access allows for efficient implementation on graphics
 processing units~\cite{}.
 
 If the spherical model has completely random interations the semicircle
-distribution \eqref{eq:semicircle} can be integrated
-
-To match the terms of the expansion in~(\ref{eq:gamma}) to known inverse laplace
-transforms some algebraic trickery is required: after substituting the limiting
-density~(\ref{eq:semicircle}) into the second equation in~(\ref{eq:gamma}) the
-infinite sum is evaluated first. Then the result is expanded in terms the denominator
-part that is a function of $s$. Only then do the terms match the laplace transforms
-of modified Bessel functions of the first kind $\frac{I_{l}(4Jt)}{t}$.
-These have well-known asymtotics for $z\rightarrow\infty$
-
+distribution \eqref{eq:semicircle} can be integrated in to obtain $\Phi(s)$.
+To match the terms of the expansion for $\Gamma(t)$ to known inverse laplace
+transforms some algebraic trickery is required: the infinite sum is evaluated first.
+Then the result is expanded in terms the denominator part that is a function of $s$.
+Only then do the terms match the laplace transforms of modified Bessel functions
+of the first kind $\frac{I_{l}(4Jt)}{t}$. These have well-known asymtotics for
+$t\rightarrow\infty$. Finally the moments \eqref{eq:moments} can be numerically
+evaluated as shown in Figure \ref{fig:wigner}.
+\begin{figure}[H]
+\centering{}
+\captionsetup{justification=centering}
+\includegraphics[scale=0.4]{figures/wigner}
+\includegraphics[scale=0.33]{figures/wigner1}
+\caption{Moments $\langle \sigma_{\lambda}(t)\rangle$
+in the $\lambda,t$ eigenvalue time plane for a given temperature $T<J$. The contours are on a log
+scale, revealing that only the maximal eigenvalue component does not decay to zero}
+\label{fig:wigner}
+\end{figure}
+\vspace{-30pt}
 \begin{align}
   \Phi(s)=\frac{s-\sqrt{s^2-16J^2}}{8J^2}\qquad
   \Gamma(t)=\frac{1}{2T}
   \sum_{l=1}^{\infty}l\left(\frac{T}{J}\right)^{l}\frac{I_{l}(4Jt)}{t}
 \end{align}
-\pagebreak
+\vspace{-20pt}
+\begin{align}
+  \implies
+  \langle \sigma_{\lambda}(t)\rangle
+  \asymp
+  t^{3/4}\mathbb{e}^{(\lambda-2J)t}\left(1-\frac{T}{J}\right)\label{eq:wignermoment}
+\end{align}
+Evaluating \eqref{eq:equilibrium} onto the maximal eigenvalue $\Lambda$ at equilibrium
+undergoes phase transition at $T=J$. For sufficiently high temperatures the
+noise washes out any preferred equilibration direction, otherwise the maximal
+eigenvalue dominates the dynamics as expected.
+\begin{align}
+  \lim_{t\rightarrow\infty}\langle \sigma_{\Lambda}(t)\rangle
+  &=\begin{cases}
+  N^{1/2}\sqrt{1-\frac{T}{J}} & T<J\\
+  0 & T>J
+  \end{cases}
+  \label{eq:eqilibrium}
+\end{align}
+Equating the asymtotic $t\rightarrow\infty$ dynamic moment \eqref{eq:wignermoment}
+with the value at
+equilibrium in the thermodynamic limit $N\rightarrow\infty$ allows extraction
+of the equilibration timescale $\tau$. Evidently, this time grows with $N$
+so in a large enough system equilibrium is never achieved at any finite time.
+\begin{align}
+  \tau\asymp
+  \left(\frac{N}{1-T/J}\right)^{2/3}
+\end{align}
 \subsection{Discrete Laplacians}
 Using the Circular Diagonalization Theorem~\cite{} one can derive the
 eigenvalues $\lambda_N(k)$ of an $N\times N$ matrix $\mathbf X$ which
@@ -315,76 +416,119 @@ scaling into account the parameter $D$ is introduced in the arcsine law.
 \end{align}
 Substituting this limiting density~(\ref{eq:arcsine}) into the second equation
 in~(\ref{eq:gamma}) the inverse laplace transform of the powers can be
-performed immediately.
+performed immediately, this time giving non-integer order modified Bessel
+functions of the first kind $I_{\frac{l-2}{2}}(4Dt)$, which have the same
+asymptotics as in the wigner ensemble case.
 \begin{align}
-  \Phi(s)=\frac{1}{\sqrt{8s + s^2}}
+  \Phi(s)=\frac{1}{\sqrt{s}\sqrt{s+8D}}
   \qquad
-  \Gamma(t)=2Te^{-4t}
-  \sum_{k=0}^{\infty}\frac{(2Tt)^{k-1}}{(k-1)!}
-  {}_0F_1(\frac{1+k}{2},4t^2)
+  \Gamma(t)=2Te^{-4Dt}
+  \sum_{l=1}^{\infty}\frac{(\frac{1}{2}-1)!}{(\frac{l}{2}-1)!}\left(\frac{T^2t}{2D}\right)^{\frac{l-2}{2}}
+  I_{\frac{l-2}{2}}(4Dt)
 \end{align}
-\pagebreak
-\subsection{Sum of the Wigner and Laplacian Matrices}
+\vspace{-20pt}
+\begin{align}
+  \implies
+  \langle \sigma_{\lambda}(t)\rangle
+  \asymp
+  \sqrt{\frac{D}{T^2}}\mathbb{e}^{\left(\lambda-\frac{T^2}{4D}\right)t}
+\end{align}
+Since all eigenvalues are negative $\lambda\leq 0$ the moments exponentially
+decay to zero, regardless of the values of $T$ and $D$ which is what would be
+expected any spectrum with strictly negative eigenvalues.
+\begin{figure}[H]
+\centering{}
+\captionsetup{justification=centering}
+\includegraphics[scale=0.4]{figures/ss1}
+\includegraphics[scale=0.33]{figures/ss}
+\caption{Moments $\langle \sigma_{\lambda}(t)\rangle$
+in the $\lambda,t$ eigenvalue time plane. The contours are\\ on a log
+scale, revealing that all eigenvalue components decay to zero}
+\label{fig:ss}
+\end{figure}
+Analysis on equilibrium values for $\left\langle\sigma_\lambda\right\rangle$
+and extraction of timescale $\tau$ like in previous section would go here...
+\subsection{Wigner Laplacian Matrices}
+A Wigner Laplacian is defined as the sum of a Wigner matrix
+of scaling $J$ and an $M$-dimensional laplacian of isotropic scaling $D$.
 In the formalism of Free Probability it is possible to express the
 $N\rightarrow\infty$ limiting eigenvalue density $\rho$ of a sum of
 matrices as the free convolution $\boxplus$ the individual limiting
-densities $\cap(\lambda|J)$ and $\mu(\lambda)$ provided that these
-densities have compact support~\cite{Novak2012}.
+compact densities $\cap(\lambda|J)$ and $\mu(\lambda|D)$~\cite{Novak2012}.
 \begin{align}
-  \rho(\lambda|J)=\cap(\lambda|J)\boxplus\mu(\lambda)
+  \rho(\lambda|J,D)=\cap(\lambda|J)\boxplus\mu(\lambda|D)
   \label{eq:freeconv}
 \end{align}
 Unfortunately the general definition of this operation is rather implicit.
 The expression can be unpacked in terms of an infinum~\cite{Biane_1997}
-for the specific case of free convolution of semicircle distrubtion
-$\cap(\lambda|J)$ with an arbitrary compact distrubtion $\mu(\lambda)$.
-Letting this distribution be that of the $M$-dimensional laplacian
-\eqref{eq:mlap} and assuming isotropic diffusion $D$ in each direction,
-the following expression can be obtained:
+and regular convolution $*$ for the specific case of free convolution of
+semicircle distrubtion $\cap(\lambda|J)$.
 \begin{align}
   \rho(\lambda|J,D)=
   \frac{1}{\pi J^2}
   \inf_{\rho\in[0,\infty)}
   \left\{
-  1-J^2\int_{\mathbb{R}}\frac{\overbrace{
-  \alpha*\alpha*\cdots*\alpha(\lambda')}^{M}\mathrm{d}\lambda'}{(\lambda-D\lambda')^2+\rho^2}
+  \varepsilon(\lambda,\rho|J,D)
   \geq0
-  \right\}
+  \right\}\qquad\qquad\quad\\
+  \varepsilon(\lambda,\rho|J,D)=
+  1-J^2\mu(\lambda|D)*\gamma(\lambda,\rho)
+  \qquad\text{where}\quad\gamma(\lambda,\rho)=\frac{1}{\lambda^2+\rho^2}
   \label{eq:inf}
 \end{align}
+Substituting the distribution $\mu(\lambda|D)$ for the $M$-dimensional laplacian
+\eqref{eq:mlap} with isotropic diffusion $D$ yields an expression for the contours
+$\varepsilon(\lambda,\rho|J,D)$ as the repeated convolution of arcsine laws
+~\eqref{eq:arcsine} with $\gamma(\lambda,\rho)$. Numerically this is efficiently
+evaluated in the fourier domain.
 \begin{figure}[H]
 \centering{}
 \captionsetup{justification=centering}
 \includegraphics[scale=0.3]{figures/1dinf}
 \includegraphics[scale=0.3]{figures/2dinf}
-\caption{Left/Right: Numerical evaluation of the integral within the infinum
-$\rho(\lambda|J,D)$ for the one/two dimensional laplacian. The
-infinum picks out one of the contours shown in black
+\caption{Left/Right: Numerical evaluation of the contours
+$\varepsilon(\lambda,\rho|J,D)$ for the one/two dimensional laplacian. The
+infinum picks out the contour at the value zero shown as a black line
 for given values of $J,D=1$}
 \label{fig:inf}
 \end{figure}
-For the $M=1$ the integral within the infinum can be evaluated and
-one obtains a transcendental equation for $\rho(\lambda|J,D)$
-in terms of the imaginary part $\Im$ of a complex valued function where
-$z=\lambda+\mathbb{i}\rho$; parameters $J,D$ set the strength of
-nonlocal and local interactions respectively.
-
+The infinum minimises the value of the contour function $\varepsilon(\lambda,\rho|J,D)$
+in the domain $\rho\in[0,\infty)$ and $\varepsilon\geq0$ and thus picks out the contour
+at $\varepsilon(\lambda,\rho|J,D)=0$. This becomes a transcendental equation for
+$\rho$, which can be expressed as a single integral containing the fourier transfrom of
+$\gamma(\lambda,\rho)$ and the $M$-th power of the zeroth order Bessel function of the first
+kind $J_0(k)$.
 \begin{align}
-  \int_{-4}^{\,0}\frac{\alpha(\lambda')\mathrm{d}\lambda'}{(\lambda-D\lambda')^2+\rho^2}=
-    -\frac{1}{\rho}
-        \Im\left[
-          \frac{1}{\sqrt{z}\sqrt{z+4D}}
-        \right]_{z=\lambda+\mathbb{i}\rho}
+        \int_{-\infty}^{\infty}\!
+          \left(J_0(k)\mathbb{e}^{\mathbb{i}k}\right)^M
+          \mathbb{e}^{\frac{\mathbb{i}k\lambda-|k|\rho}{2D}}
+        \,\mathrm{d}k
+    =\frac{2\rho}{J^2}\label{eq:density}
 \end{align}
+Looking at the functional form of the above equation indicates that different choices
+for $J,D$ amount to shifting and scaling such that the infinum picks out neighbouring
+contours. Indeed in Figure \ref{fig:inf} an approach to the semicircle and convoluted
+arcsine laws can be seen for positive and negative contours respectively.
+
+Figure \ref{fig:spectra} reveals the corresponance between the density given by
+the transcendental equation~\eqref{eq:density} and empirical eigenvalue histograms of
+Wigner Laplacians. The analytical density had to be renormalised such that its integral
+is one. While the shifting of the bounds of the distribution towards negative
+eigenvalues matches well, it appears that there is an error in scaling which manifests
+as a discrepency at intermediate values of $J$ and $D$ between empirical and theoretical
+densities.
 \begin{figure}[H]
 \centering{}
 \captionsetup{justification=centering}
 \includegraphics[scale=0.3]{figures/interaction1d}
 \includegraphics[scale=0.3]{figures/interaction2d}
-\caption{Left/Right: Random interaction spectra $S(\lambda|\mu)$ for variable
-values of the order parameter $\mu$ which introduces one/two dimensional laplacian}
-\label{fig:spectrum}
+\caption{Left/Right: Eigenvalue density of one/two dimensional Wigner \\Laplacian
+$\rho(\lambda|\,J,D)$ for parameter values $D\in(0,1)$ and $J=1-D$}
+\label{fig:spectra}
 \end{figure}
+Numerical evaluation of integrals in \eqref{eq:gamma} should follow here to
+determine moments. Expecting to observe crossover region where equilibrium
+is reached in finite time for sufficiently large $D$...
 
 \bibliography{bibliography/biblio}
 \bibliographystyle{ieeetr}
